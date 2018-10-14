@@ -24,10 +24,8 @@ function draw() {
 
   let counter = 0;
 
-  // Map the tiles resolution to the mouse X & Y
   let mX = constrain(mouseX, 0, width);
   let mY = constrain(mouseY, 0, height);
-  // Current tile counts are products of mX mapped to the tileCount, returned as INTs
   let currentTileCountX = int(map(mX, 0, width, 1, tileCountX));
   let currentTileCountY = int(map(mY, 0, height, 1, tileCountY));
   let tileWidth = width / currentTileCountX;
