@@ -1,50 +1,90 @@
+# Fragmented Color palette
+
+This sketch generates a color palette according to a set of changeable rules. The sketch uses modulous math to offset the colors and create the pattern.
+
+## Step 1
+
+```js
 'use strict'
 
+//state the number of tile along the X and Y axis
 let tileCountX = 50;
 let tileCountY = 10;
 
+// create arrays to store each tile's H,S and B values
 let hueVals = [];
 let satVals = [];
 let brightVals = [];
 
 function setup() {
+  //create a canvas to fill the entire browser window
   createCanvas(windowWidth, windowHeight);
-  colorMode(HSB, 360, 100, 100);
+  colorMode(HSB,360,100,100);
   noStroke();
 
+  //populate the HSB arrays with random values
   for (let i = 0; i < tileCountX; i++) {
     hueVals[i] = random(360);
     satVals[i] = random(100);
     brightVals[i] = random(100);
   }
 }
+```
 
+## Step 2
+
+```js
 function draw() {
-  background(0, 0, 100);
+  //white background
+  background(0,0,100);
 
+  // defining the tile W and H based on the number of tiles
+  let currentTileCountX = tileCountX;
+  let currentTileCountY = tileCountY;
+  let tileWidth = width/currentTileCountX;
+  let tileHeight = height/currentTileCountY;
+
+  //the counter var will be used to decide the fill of each tile
   let counter = 0;
 
-  let mX = constrain(mouseX, 0, width);
-  let mY = constrain(mouseY, 0, height);
-  let currentTileCountX = int(map(mX, 0, width, 1, tileCountX));
-  let currentTileCountY = int(map(mY, 0, height, 1, tileCountY));
-  let tileWidth = width / currentTileCountX;
-  let tileHeight = height / currentTileCountY;
-
-  for (let gridY = 0; gridY < currentTileCountY; gridY++) {
-    for (let gridX = 0; gridX < currentTileCountX; gridX++) {
-      let posX = gridX * tileWidth;
-      let posY = gridY * tileHeight;
+  //render the tiles
+  for(let gridY = 0; gridY < currentTileCountY; gridY++){
+    for(let gridX = 0; gridX < currentTileCountX; gridX++){
+      let posX = gridX*tileWidth;
+      let posY = gridY*tileHeight;
 
       let index = counter % tileCountX;
 
-      fill(hueVals[index], satVals[index], brightVals[index]);
-      rect(posX, posY, tileWidth, tileHeight);
+      //choose the fill from the HSB arrays, and increment counter
+      fill(hueVals[index],satVals[index], brightVals[index]);
+      rect(posX,posY,tileWidth,tileHeight);
       counter++;
     }
   }
 }
+```
 
+## Step 3
+
+```js
+// Map the tiles resolution to the mouse X & Y
+
+//create variable to hold the constrained mouse X and Y
+let mX = constrain(mouseX, 0, width);
+let mY = constrain(mouseY, 0, height);
+// Current tile counts are products of mX mapped to the tileCount, returned as INTs
+let currentTileCountX = int(map(mX, 0, width, 1, tileCountX));
+let currentTileCountY = int(map(mY, 0, height, 1, tileCountY));
+let tileWidth = width / currentTileCountX;
+let tileHeight = height / currentTileCountY;
+
+```
+
+## Step 4
+
+The user interaction is added in the form of controls that change the rules regarding how the color palette is generated.
+
+```js
 function keyPressed() {
   if (key == 's' || key == 'S') saveCanvas(gd.timestamp(), 'png');
   if (key == 'c' || key == 'C') {
@@ -160,3 +200,4 @@ function keyPressed() {
   }
 
 }
+```
