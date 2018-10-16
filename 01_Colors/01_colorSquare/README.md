@@ -1,4 +1,6 @@
-# Generative Design - Exercise 1
+# Color_01_colorSquare
+
+This sketch creates a scalable square that mapped to the Mouse X. The fill of the background and the square are also mapped to the mouseY, although they are mapped inversely to each other.
 
 ## Step 1
 
