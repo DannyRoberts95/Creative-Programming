@@ -16,3 +16,28 @@ function setup() {
   noStroke();
 }
 ```
+
+## Step 2
+
+```js
+
+function draw() {
+  //the background hue is based off the mouse Y value
+  background(mouseY / 2, 100, 100);
+  // the fill for the rect is scaled inversely to the mouseY value
+  fill(360 - mouseY / 2, 100, 100);
+  //draw the rect at the center of the screen and set its width and height based off the
+  //mouseX pos
+  rect(width/2, height/2, mouseX + 1, mouseX + 1);
+}
+```
+
+## Step 3
+
+```js
+function keyPressed() {
+  //On pressing the S key the canvas will be saved as a png,
+  //using the generative design timestamp function to name it
+  if (key == 's' || key == 'S') saveCanvas(gd.timestamp(), 'png');
+}
+```

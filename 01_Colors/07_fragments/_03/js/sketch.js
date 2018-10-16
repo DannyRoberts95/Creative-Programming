@@ -30,12 +30,12 @@ function draw() {
   }
 
   let counter = 0;
-  let rowCount = 1;
+  let rowCount = int(random(5,50));
   let rowHeight = width / rowCount;
 
   //for every row...
   for (let i = 0; i < rowCount; i++) {
-    let fragmentNumber = 5;
+    let fragmentNumber = i+1;
     let fragmentWidths = []
     let widthSum = 0;
 
@@ -71,6 +71,4 @@ function draw() {
       counter ++;
     }
   }
-
-
 }

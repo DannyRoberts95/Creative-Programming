@@ -1,4 +1,4 @@
-# CreativeComputing
+#Generating a Color palette
 
 This sketch generates a color palette according to a set of changeable rules. The sketch uses modulous math to offset the colors and create the pattern.
 
