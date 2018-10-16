@@ -1,5 +1,6 @@
-# Color_02_colorGrid
+# Color_03_segmentedTriangles
 
+In this sketch the triangle fan shape is used to make a segmented circle, whose segments' colors correspond to their angle in the circle. The Saturation and Brightness of the colors are mapped to the mouse position. 
 
 ## Step 1
 
