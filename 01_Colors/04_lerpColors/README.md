@@ -80,8 +80,18 @@ for (let y = 0; y <= tileCountY; y++) {
 ## Step 3
 
 ```js
+
+//assign variables to hold the constarined mouse X & Y
+let mX = constrain(mouseX, 0, width);
+let mY = constrain(mouseY, 0, height);
+//define the amount of tiles based on the mouse X and Y position
+tileCountX = int(map(mX, 0, width, 1, maxTileX));
+tileCountY = int(map(mY, 0, height, 1, maxTileY));
 boxWidth = width / tileCountX;
 boxHeight = height / tileCountY;
+//empty the color array each frame
+colors = [];
+
 // loop through the rows and popluate them with color
 // for each row...
 for (let y = 0; y <= tileCountY; y++) {
@@ -109,12 +119,12 @@ for (let y = 0; y <= tileCountY; y++) {
 ## Step 4
 
 ```js
-//add in a variable to control the method of interpoltion
+//add in a variable to control the method of interpolation
 var interpolateShortest = true;
 ```
 
 ```js
-//based on that interpolation variable...
+//When colors are being lerped based on that interpolation variable...
 if (interpolateShortest) {
   // switch to rgb color mode
   colorMode(RGB);
