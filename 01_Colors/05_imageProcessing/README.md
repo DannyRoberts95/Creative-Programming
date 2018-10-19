@@ -1,5 +1,6 @@
-# Color_02_colorGrid
+# Color_02_imageProcessing
 
+In this sketch an image is loaded into memory and converted into a color palette by targeting the individual pixels. The resolution of the picture is then mapped to the mouse. The user can sort the individual pixels by HUE, SATURATION, BRIGHTNESS and GRAYSCALE. The user may also choose to load alternative pictures.
 
 ## Step 1
 
