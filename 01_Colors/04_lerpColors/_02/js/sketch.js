@@ -3,6 +3,7 @@ let height = 750;
 
 let colorsRight = [];
 let colorsLeft = [];
+
 let tileCountX = 10;
 let tileCountY = 10;
 let boxWidth = width/tileCountX;
@@ -11,23 +12,23 @@ let boxHeight = height/tileCountY;
 function setup(){
   createCanvas(width,height);
   colorMode(HSB);
-  noStroke();
+  // noStroke();
   shakeColors();
 }
 
 function draw(){
-  boxWidth = width/tileCountX;
-  boxHeight = height/tileCountY;
-  
-  for (let y = 0; y<=tileCountY; y++){
+  boxWidth = width / tileCountX;
+  boxHeight = height / tileCountY;
+  for (let y = 0; y <= tileCountY; y++) {
+    // assign the colors to lerp between from the color arrays
     let startCol = colorsLeft[y];
     let endCol = colorsRight[y];
-    for(let x = 0; x<=tileCountX; x++){
-      let lerpAmount = map(x,0,tileCountX-1,0,1);
-      let interColor = lerpColor(startCol,endCol,lerpAmount);
-      fill(interColor);
-      let posX = x*boxWidth;
-      let posY = y*boxHeight;
+    //for each column in the row...
+    for (let x = 0; x <= tileCountX; x++) {
+      //define the tile position
+      let posX = x * boxWidth;
+      let posY = y * boxHeight;
+      // render the tile
       rect(posX, posY, boxWidth, boxWidth);
     }
   }
