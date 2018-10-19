@@ -1,5 +1,7 @@
 # Color_04_colorLinearInterpolation
 
+This sketch uses linear interpolation to generate a color palette. For the first and last tile of each row a contrasting color is generated. Using the lerpColor function, the tiles between them are filled with stepped colors that transtition
+from from the color on the left, to the color on the right.
 
 ## Step 1
 
