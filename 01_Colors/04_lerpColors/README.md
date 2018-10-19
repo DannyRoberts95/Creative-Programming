@@ -100,9 +100,9 @@ for (let y = 0; y <= tileCountY; y++) {
   let endCol = colorsRight[y];
   //for each column in the row...
   for (let x = 0; x <= tileCountX; x++) {
-    //establish the amount the current tile's color should be lerped by
+    //establish the current tile's color using the lerpAmount
     let lerpAmount = map(x, 0, tileCountX - 1, 0, 1);
-    //lerp between startCol and endCol by the specified amount
+    //lerp between startCol and endCol by the lerpAmount
     let interColor = lerpColor(startCol, endCol, lerpAmount);
     // set the fill
     fill(interColor);
