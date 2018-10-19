@@ -33,7 +33,6 @@ function draw() {
   let mX = constrain(mouseX, 0, width);
   let mY = constrain(mouseY, 0, height);
   colors = [];
-
   tileCountX = int(map(mX, 0, width, 1, maxTileX));
   tileCountY = int(map(mY, 0, height, 1, maxTileY));
   boxWidth = width / tileCountX;
@@ -48,10 +47,10 @@ function draw() {
 
       //based on that interpolation variable...
       if (interpolateShortest) {
-        // switch to rgb
+        // switch to rgb color mode
         colorMode(RGB);
         interColor = lerpColor(startCol, endCol, lerpAmount);
-        // switch back
+        // switch back to HSB
         colorMode(HSB);
       } else {
         interColor = lerpColor(startCol, endCol, lerpAmount);
@@ -94,6 +93,7 @@ function keyPressed() {
   if (key == '2') interpolateShortest = false;
 }
 
+// add in mouse interaction to generate a new color palette
 function mouseReleased(){
   shakeColors();
 }

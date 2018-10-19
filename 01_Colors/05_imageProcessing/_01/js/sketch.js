@@ -11,18 +11,14 @@ function setup(){
   createCanvas(600,600);
   noCursor();
   noStroke();
-
   //Causes the draw function to only execute once
   noLoop();
-
 }
 
 function draw(){
-
   //loads the pixel data for this image into the [pixels] array
   img.loadPixels();
-
+  //console.log the img object
   console.log(img);
-  console.log(img.pixels[0]);
 
 }

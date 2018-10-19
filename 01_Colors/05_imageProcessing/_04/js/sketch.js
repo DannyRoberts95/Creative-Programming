@@ -2,6 +2,8 @@
 
 var img;
 var colors = [];
+
+// add a variable to hold the current color sort mode
 var sortMode = null;
 
 function preload() {
@@ -31,6 +33,8 @@ function draw() {
     }
   }
 
+  //implement the GD library sort colors function to sort the colors array
+  //based on the sortMode variable
   gd.sortColors(colors, sortMode);
 
   var i = 0;

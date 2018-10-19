@@ -1,4 +1,4 @@
-#Generating a Color palette
+#Color_06_generateColorPalette
 
 This sketch generates a color palette according to a set of changeable rules. The sketch uses modulous math to offset the colors and create the pattern.
 
