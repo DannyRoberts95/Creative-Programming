@@ -10,6 +10,7 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   colorMode(HSB, 360, 100, 100);
   noStroke();
+  //defining random seed ensures identical random results each time the sketch runs
   randomSeed(0);
 }
 
@@ -28,9 +29,11 @@ function draw() {
       brightVals[i] = int(random(50, 100));
     }
   }
-
+  //create the counter variable which will be used for modulus math later on
   let counter = 0;
+  //define the number of rows
   let rowCount = 1;
+  // define the row height
   let rowHeight = width / rowCount;
 
   //for every row...
@@ -39,19 +42,20 @@ function draw() {
     let fragmentWidths = []
     let widthSum = 0;
 
-    //generate the random values which correspond to width
+    //generate the random values which will be mapped to fragment width
     for (let ii = 0; ii < fragmentNumber; ii++) {
       fragmentWidths[ii] = random(50, 200);
+      //add the vales together so they can be scaled later
       widthSum += fragmentWidths[ii];
     }
-    //scale the random values to fill the width of the window
+    //scale the random values to fit the width of the window
     for (let ii = 0; ii < fragmentNumber; ii++) {
       let scaledWidth = (fragmentWidths[ii] / widthSum) * width;
       fragmentWidths[ii] = scaledWidth;
     }
-    //draw the fragments..
+    //render the fragments..
 
-    //store the X pos for each fragment
+    //store the X pos for each fragment so we know where to begin drawing the next one
     let fragXpos = 0;
     for (let ii = 0; ii < fragmentNumber; ii++) {
       let index = counter % colorCount;
@@ -68,7 +72,7 @@ function draw() {
       //increment the fragXpos var for the next fragment
       fragXpos += fragmentWidths[ii];
       //increment the counter
-      counter ++;
+      counter++;
     }
   }
 

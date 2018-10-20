@@ -5,6 +5,8 @@ In this sketch an image is loaded into memory and converted into a color palette
 ## Step 1
 
 ```js
+l'use strict'
+
 let img;
 
 function preload(){
@@ -23,11 +25,10 @@ function setup(){
 function draw(){
   //loads the pixel data for this image into the [pixels] array
   img.loadPixels();
-  //console.log the img object to make sure it has loaded correctly
+  //console.log the img object
   console.log(img);
 
 }
-
 ```
 
 ## Step 2
@@ -41,6 +42,22 @@ function setup() {
 ```
 
 ```js
+'use strict'
+
+let img;
+let colors = [];
+let tilecount;
+
+function preload() {
+  img = loadImage('../data/pic1.jpg');
+}
+
+function setup() {
+  //make the canvas size equal to the image size
+  createCanvas(img.width, img.height);
+  noStroke();
+}
+
 function draw() {
   //define how many tiles across the X & Y
   tilecount = 10;
@@ -77,39 +94,114 @@ function draw() {
     }
   }
 } //end of draw
+
 ```
 
 ## Step 3
 
 ```js
-// change the number of tiles to be the product
-// of width/mouseX OR width/5 based on which is the larger value
-var tileCount = floor(width / max(mouseX, 5));
-var rectSize = width / tileCount;
+'use strict'
+
+let img;
+
+let colors = [];
+
+function preload() {
+  img = loadImage('../data/pic1.jpg');
+}
+
+function setup() {
+  createCanvas(img.width, img.height);
+  // noCursor();
+  noStroke();
+
+}
+
+function draw() {
+
+  // assign the number of tiles as the product
+  // of width/mouseX OR width/5 based on which is the larger value
+  var tilecount = floor(width / max(mouseX, 5));
+  var rectSize = width / tilecount;
+
+  let colors = [];
+
+  img.loadPixels();
+
+  for (let gridX = 0; gridX < tilecount; gridX++) {
+    for (let gridY = 0; gridY < tilecount; gridY++) {
+      let posX = int(gridX * rectSize);
+      let posY = int(gridY * rectSize);
+      var index = (posY * img.width + posX) * 4;
+      var col = color(img.pixels[index], img.pixels[index + 1], img.pixels[index + 2], img.pixels[index + 3]);
+      colors.push(col);
+    }
+  }
+
+  let i = 0;
+  for (let gridX = 0; gridX < tilecount; gridX++) {
+    for (let gridY = 0; gridY < tilecount; gridY++) {
+      fill(colors[i]);
+      rect(gridX * rectSize, gridY * rectSize, rectSize, rectSize);
+      i++;
+    }
+  }
+
+} //end of draw
 ```
+
 ## Step 4
 
 ```js
+'use strict';
+
+var img;
+var colors = [];
+
 // add a variable to hold the current color sort mode
 var sortMode = null;
-```
 
-```js
-//call the GD library sort colors function to sort the colors array
-//based on the sortMode variable
-gd.sortColors(colors, sortMode);
+function preload() {
+  img = loadImage('../data/pic1.jpg');
+}
 
-var i = 0;
-for (var gridY = 0; gridY < tileCount; gridY++) {
-  for (var gridX = 0; gridX < tileCount; gridX++) {
-    fill(colors[i]);
-    rect(gridX * rectSize, gridY * rectSize, rectSize, rectSize);
-    i++;
+function setup() {
+  createCanvas(600, 600);
+  noCursor();
+  noStroke();
+}
+
+function draw() {
+  var tileCount = floor(width / max(mouseX, 5));
+  var rectSize = width / tileCount;
+
+  img.loadPixels();
+  colors = [];
+
+  for (var gridY = 0; gridY < tileCount; gridY++) {
+    for (var gridX = 0; gridX < tileCount; gridX++) {
+      var px = int(gridX * rectSize);
+      var py = int(gridY * rectSize);
+      var i = (py * img.width + px) * 4;
+      var c = color(img.pixels[i], img.pixels[i + 1], img.pixels[i + 2], img.pixels[i + 3]);
+      colors.push(c);
+    }
+  }
+
+  //implement the GD library sort colors function to sort the colors array
+  //based on the sortMode variable
+  gd.sortColors(colors, sortMode);
+
+  var i = 0;
+  for (var gridY = 0; gridY < tileCount; gridY++) {
+    for (var gridX = 0; gridX < tileCount; gridX++) {
+      fill(colors[i]);
+      rect(gridX * rectSize, gridY * rectSize, rectSize, rectSize);
+      i++;
+    }
   }
 }
-```
 
-```js
 //When the key is pressed...
 function keyReleased() {
 
@@ -125,13 +217,10 @@ function keyReleased() {
 
   //change the value of the sortMode Var passed into the gd.sortcolor function
   if (key == '5') sortMode = null;
-  // sort by HUE
   if (key == '6') sortMode = gd.HUE;
-  // sort by SATURATION
   if (key == '7') sortMode = gd.SATURATION;
-  // sort by BRIGHTNESS
   if (key == '8') sortMode = gd.BRIGHTNESS;
-  // sort by GRAYSCALE
   if (key == '9') sortMode = gd.GRAYSCALE;
 }
+
 ```

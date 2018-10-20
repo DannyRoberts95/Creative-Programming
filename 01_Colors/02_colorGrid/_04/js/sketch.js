@@ -24,3 +24,8 @@ function draw() {
     }
   }
 }
+
+//on key press, if the key is 'S' save the canvas using the gd timestamp function. file saves as a png
+function keyPressed() {
+  if (key == 's' || key == 'S') saveCanvas(gd.timestamp(), 'png');
+}

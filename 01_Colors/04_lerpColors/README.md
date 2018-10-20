@@ -60,22 +60,59 @@ function genRandomCol(){
 ## Step 2
 
 ```js
+let width = 750;
+let height = 750;
 
-boxWidth = width / tileCountX;
-boxHeight = height / tileCountY;
-for (let y = 0; y <= tileCountY; y++) {
-  // assign the colors to lerp between from the color arrays
-  let startCol = colorsLeft[y];
-  let endCol = colorsRight[y];
-  //for each column in the row...
-  for (let x = 0; x <= tileCountX; x++) {
-    //define the tile position
-    let posX = x * boxWidth;
-    let posY = y * boxHeight;
-    // render the tile
-    rect(posX, posY, boxWidth, boxWidth);
+let colorsRight = [];
+let colorsLeft = [];
+
+let tileCountX = 10;
+let tileCountY = 10;
+let boxWidth = width/tileCountX;
+let boxHeight = height/tileCountY;
+
+function setup(){
+  createCanvas(width,height);
+  colorMode(HSB);
+  // noStroke();
+  shakeColors();
+}
+
+function draw(){
+  boxWidth = width / tileCountX;
+  boxHeight = height / tileCountY;
+  for (let y = 0; y <= tileCountY; y++) {
+    // assign the colors to lerp between from the color arrays
+    let startCol = colorsLeft[y];
+    let endCol = colorsRight[y];
+    //for each column in the row...
+    for (let x = 0; x <= tileCountX; x++) {
+      //define the tile position
+      let posX = x * boxWidth;
+      let posY = y * boxHeight;
+      // render the tile
+      rect(posX, posY, boxWidth, boxWidth);
+    }
   }
 }
+
+function shakeColors() {
+  for(let i = 0; i<tileCountY; i++){
+    colorsLeft.push(genRandomCol());
+  }
+  for(let i = 0; i<tileCountY; i++){
+    colorsRight.push(genRandomCol());
+  }
+}
+
+function genRandomCol(){
+  let col1 = floor(random(0,255));
+  let col2 = floor(random(0,255));
+  let col3 = floor(random(0,255));
+  let randomColor = color(col1,col2,col3);
+  return randomColor;
+}
+
 
 ```
 
@@ -83,62 +120,157 @@ for (let y = 0; y <= tileCountY; y++) {
 
 ```js
 
-//assign variables to hold the constarined mouse X & Y
-let mX = constrain(mouseX, 0, width);
-let mY = constrain(mouseY, 0, height);
-//define the amount of tiles based on the mouse X and Y position
-tileCountX = int(map(mX, 0, width, 1, maxTileX));
-tileCountY = int(map(mY, 0, height, 1, maxTileY));
-boxWidth = width / tileCountX;
-boxHeight = height / tileCountY;
-//empty the color array each frame
-colors = [];
+let width = 750;
+let height = 750;
 
-// loop through the rows and popluate them with color
-// for each row...
-for (let y = 0; y <= tileCountY; y++) {
-  // assign the colors to lerp between from the color arrays
-  let startCol = colorsLeft[y];
-  let endCol = colorsRight[y];
-  //for each column in the row...
-  for (let x = 0; x <= tileCountX; x++) {
-    //establish the current tile's color using the lerpAmount
-    let lerpAmount = map(x, 0, tileCountX - 1, 0, 1);
-    //lerp between startCol and endCol by the lerpAmount
-    let interColor = lerpColor(startCol, endCol, lerpAmount);
-    // set the fill
-    fill(interColor);
-    //define the tile position
-    let posX = x * boxWidth;
-    let posY = y * boxHeight;
-    // render the tile
-    rect(posX, posY, boxWidth, boxWidth);
+let colorsRight = [];
+let colorsLeft = [];
+
+let tileCountX = 10;
+let tileCountY = 10;
+let boxWidth = width / tileCountX;
+let boxHeight = height / tileCountY;
+
+function setup() {
+  createCanvas(width, height);
+  colorMode(HSB);
+  noStroke();
+  shakeColors();
+}
+
+function draw() {
+  boxWidth = width / tileCountX;
+  boxHeight = height / tileCountY;
+  // loop through the rows and popluate them with color
+  // for each row...
+  for (let y = 0; y <= tileCountY; y++) {
+    // assign the colors to lerp between from the color arrays
+    let startCol = colorsLeft[y];
+    let endCol = colorsRight[y];
+    //for each column in the row...
+    for (let x = 0; x <= tileCountX; x++) {
+      //establish the amount the current tile's color should be lerped by
+      let lerpAmount = map(x, 0, tileCountX - 1, 0, 1);
+      //lerp between startCol and endCol by the specified amount
+      let interColor = lerpColor(startCol, endCol, lerpAmount);
+      // set the fill
+      fill(interColor);
+      //define the tile position
+      let posX = x * boxWidth;
+      let posY = y * boxHeight;
+      // render the tile
+      rect(posX, posY, boxWidth, boxWidth);
+    }
   }
 }
+
+function shakeColors() {
+  for (let i = 0; i < tileCountY; i++) {
+    colorsLeft.push(genRandomCol());
+  }
+  for (let i = 0; i < tileCountY; i++) {
+    colorsRight.push(genRandomCol());
+  }
+}
+
+function genRandomCol() {
+  let col1 = floor(random(0, 255));
+  let col2 = floor(random(0, 255));
+  let col3 = floor(random(0, 255));
+  let randomColor = color(col1, col2, col3);
+  return randomColor;
+}
+
 
 ```
 
 ## Step 4
 
 ```js
+let colorsRight = [];
+let colorsLeft = [];
+
+let maxTileX = 50;
+let maxTileY = 50;
+
+let colors = [];
+let tileCountX;
+let tileCountY;
+let boxWidth;
+let boxHeight;
+
 //add in a variable to control the method of interpolation
 var interpolateShortest = true;
-```
 
-```js
-//When colors are being lerped based on that interpolation variable...
-if (interpolateShortest) {
-  // switch to rgb color mode
-  colorMode(RGB);
-  interColor = lerpColor(startCol, endCol, lerpAmount);
-  // switch back to HSB
+function setup() {
+  let w = windowWidth;
+  let h = windowHeight;
+
+  tileCountX = maxTileX;
+  tileCountY = maxTileY;
+  boxWidth = w / tileCountX;
+  boxHeight = h / tileCountY;
+
+  createCanvas(w, h);
   colorMode(HSB);
-} else {
-  interColor = lerpColor(startCol, endCol, lerpAmount);
+  noStroke();
+  shakeColors();
 }
-```
 
-```js
+function draw() {
+  background(0, 0, 100);
+  let mX = constrain(mouseX, 0, width);
+  let mY = constrain(mouseY, 0, height);
+  colors = [];
+  tileCountX = int(map(mX, 0, width, 1, maxTileX));
+  tileCountY = int(map(mY, 0, height, 1, maxTileY));
+  boxWidth = width / tileCountX;
+  boxHeight = height / tileCountY;
+
+  for (let y = 0; y <= tileCountY; y++) {
+    let startCol = colorsLeft[y];
+    let endCol = colorsRight[y];
+    for (let x = 0; x <= tileCountX; x++) {
+      let lerpAmount = map(x, 0, tileCountX - 1, 0, 1);
+      let interColor;
+
+      //based on that interpolation variable...
+      if (interpolateShortest) {
+        // switch to rgb color mode
+        colorMode(RGB);
+        interColor = lerpColor(startCol, endCol, lerpAmount);
+        // switch back to HSB
+        colorMode(HSB);
+      } else {
+        interColor = lerpColor(startCol, endCol, lerpAmount);
+      }
+
+      fill(interColor);
+      let posX = x * boxWidth;
+      let posY = y * boxHeight;
+      rect(posX, posY, boxWidth, boxHeight);
+      colors.push(interColor);
+    }
+  }
+}
+
+function shakeColors() {
+  for (let i = 0; i < tileCountY; i++) {
+    let col1 = floor(random(0, 100));
+    let col2 = floor(random(0, 100));
+    let col3 = floor(random(0, 100));
+    let randomColor = color(col1, col2, col3);
+    colorsLeft[i]= randomColor;
+  }
+  for (let i = 0; i < tileCountY; i++) {
+    let col1 = floor(random(100, 255));
+    let col2 = floor(random(100,255));
+    let col3 = floor(random(100, 255));
+    let randomColor = color(col1, col2, col3);
+    colorsRight[i]= randomColor;
+  }
+}
+
 function keyPressed() {
   //add in the keypressed functionality to...
   // export color array as an ASE file
@@ -149,11 +281,10 @@ function keyPressed() {
   if (key == '1') interpolateShortest = true;
   if (key == '2') interpolateShortest = false;
 }
-```
 
-```js
 // add in mouse interaction to generate a new color palette
 function mouseReleased(){
   shakeColors();
 }
+
 ```
