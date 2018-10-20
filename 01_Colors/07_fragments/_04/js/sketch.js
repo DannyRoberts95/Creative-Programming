@@ -84,3 +84,24 @@ function draw() {
     }
   }
 }
+
+//If the mouse is clicked, generate a new random seed and run the draw
+function mouseReleased() {
+  randomSeed(random(100000));
+  loop();
+}
+// Add the ability to save canvas colors as an ASE file and PNG
+function keyPressed() {
+  if (key == 's' || key == 'S') saveCanvas(gd.timestamp(), 'png');
+  if (key == 'c' || key == 'C') {
+
+    let colors = [];
+    //loop through the H,S and B value arrays...
+    for (let i = 0; i < hueValues.length; i++) {
+      // create a color object from each and push it into the colors array...
+      colors.push(color(hueValues[i], saturationValues[i], brightnessValues[i]));
+    }
+    //create an ase file
+    writeFile([gd.ase.encode(colors)], gd.timestamp(), 'ase');
+  }
+}
