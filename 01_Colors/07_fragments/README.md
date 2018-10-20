@@ -1,5 +1,7 @@
 # Color_07_fragmentedColorPalette
 
+This sketch generates a color palette of contrasting colors, with tiles of varying width. The tiles may also be broken down further into fragments, each with their own color.
+
 ## Step 1
 
 ```js
