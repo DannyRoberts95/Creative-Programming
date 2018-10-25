@@ -1,6 +1,7 @@
-# Color_08_alphaFragments
+# Color_09_radialGradients
 
-This sketch builds on sketch 07 by adding alpha transparency, overlap and linear gradients to the fragments.
+This sketch builds on sketch 08 by adding a randomness to the fragment generation and by adding radial gradients
+to the fragments, composed of complementing colors.
 
 ## Step 1
 
