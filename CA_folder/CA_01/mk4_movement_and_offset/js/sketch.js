@@ -39,6 +39,7 @@ function draw() {
 
 
       let randomVal = random(-randomValSum, randomValSum);
+      //using the randomVal and the damping variables, the tiles are offset from their grid position
       let x = canvasPadding + (tileWidth / 2) + (i * (tileWidth + padding) + (randomVal * damping));
       let y = canvasPadding + (tileHeight / 2) + (ii * (tileHeight + padding) + (randomVal * damping));
 
