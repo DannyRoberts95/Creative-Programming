@@ -24,6 +24,7 @@ function setup() {
   colNum = 25;
   rowNum = 25;
   randomInc = 0;
+  //add a variable to control the threshold at which the random randomVal will fragment a tile
   fragmentationThreshold = 45;
   randomValSum = 0;
   damping = 0;
@@ -80,7 +81,10 @@ function draw() {
       strokeWeight(1);
 
 
+      //id the stored random val breaks threshold...
       if (coOrds[i][ii].z > fragmentationThreshold) {
+
+        // render 4 tiles each a quarter the size of the original tile and offset them independantly 
         push();
         translate(x-tileWidth/4, y-tileHeight/4);
         rect((randomVal*damping/2),(randomVal4*damping/2),tileWidth/2,tileHeight/2);
