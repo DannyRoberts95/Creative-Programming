@@ -25,8 +25,8 @@ function setup() {
   tileSize = 25;
   padding = 2.5;
   canvasPadding = (tileSize + padding) * 5;
-  colNum = 25;
-  rowNum = 15;
+  colNum = 22;
+  rowNum = 12;
   randomInc = 0;
   fragmentationThreshold = 25;
   randomValSum = 0;
@@ -46,6 +46,7 @@ function setup() {
 function draw() {
 
   frameRate(10);
+
   randomInc = map(mouseX, 0, width, 0, 2);
   randomInc = constrain(randomInc, 0, 2);
   damping = map(mouseY, 0, height, 0, 2);
@@ -55,19 +56,20 @@ function draw() {
   background(0);
   rectMode(CENTER);
 
+  //run the program functions 
   displayVars(100, 10);
   updateGridValues();
   renderGrids();
-
-
 } //END OF DRAW
+
+
 
 //----------------------------------------------------------------------------------------------------------------------------------------
 //GENERATE VALUES FOR THE GRID
 //----------------------------------------------------------------------------------------------------------------------------------------
 function updateGridValues() {
   for (let i = 0; i < colNum; i++) {
-    //inc the random value based on how far across thr grid the tile is
+    //increment the random value based on how far across the grid the tile is
     randomValSum += (randomInc * i);
     //two arrays to store the distorted and un distorted values
     coOrds[i] = [];
@@ -90,6 +92,8 @@ function updateGridValues() {
   randomValSum *= 0;
 }
 
+
+
 //----------------------------------------------------------------------------------------------------------------------------------------
 //RENDER THE GRID
 //----------------------------------------------------------------------------------------------------------------------------------------
@@ -109,7 +113,7 @@ function renderGrids() {
       rect(0, 0, tileSize, tileSize);
       pop();
 
-      //RENDER THE SECOND GRID
+      //RENDER THE DISTORED GRID
       let lerpAmount = map(i, 0, colNum, 0, 1);
       let col1 = colorsLeft[ii];
       let col2 = colorsRight[ii];
@@ -161,6 +165,10 @@ function renderGrids() {
   }
 }
 
+
+//----------------------------------------------------------------------------------------------------------------------------------------
+//CREATE THE COLORS
+//----------------------------------------------------------------------------------------------------------------------------------------
 function populateColorArrays() {
   //populate the righthand colors
   for (let i = 0; i < colNum; i++) {
@@ -190,6 +198,8 @@ function populateColorArrays() {
     }
   }
 }
+
+
 
 function displayVars(col, fontSize) {
   push();

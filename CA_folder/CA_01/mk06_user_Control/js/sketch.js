@@ -50,7 +50,7 @@ function draw() {
   rectMode(CENTER);
   noFill();
 
-  //This function displays the var values for
+  //This function displays the var values for later reference
   displayVars();
 
   //the loop for generating grid coOrdinates has been moved to draw so that it updates continuously

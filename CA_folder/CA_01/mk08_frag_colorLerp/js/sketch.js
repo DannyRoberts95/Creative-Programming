@@ -52,7 +52,7 @@ function draw() {
   damping = constrain(damping, 0, 1);
 
   randomSeed(10);
-  background(0,alphaValue/2);
+  background(0);
   rectMode(CENTER);
   noFill();
 

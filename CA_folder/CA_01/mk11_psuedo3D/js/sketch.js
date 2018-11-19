@@ -19,13 +19,14 @@ let alphaValue;
 
 let ranSeed;
 
+//added user controlled booleans to control rotation and base grid display
 let rotation = false;
 let baseGrid = false;
 
 function setup() {
 
   tileSize = 30;
-  padding = 7.5;
+  padding = 2.5;
   canvasPadding = (tileSize + padding) * 10;
   colNum = 22;
   rowNum = 12;
@@ -33,7 +34,8 @@ function setup() {
   fragmentationThreshold = 55;
   randomValSum = 0;
   damping = 0;
-  alphaValue = 100;
+  alphaValue = 50;
+  //variable added to control stroke alpha
   strokeAlphaValue = alphaValue / 2;
 
   ranSeed = 1;
@@ -49,7 +51,7 @@ function setup() {
 function draw() {
 
   frameRate(10);
-  //random inc range is increased
+  //random inc range is increased from 2 to 5
   randomInc = map(mouseX, 0, width, 0, 5);
   randomInc = constrain(randomInc, 0, 5);
   damping = map(mouseY, 0, height, 0, 1);
@@ -70,13 +72,12 @@ function draw() {
 function updateGridValues() {
   for (let i = 0; i < colNum; i++) {
     randomValSum += (randomInc * i);
-    //the distortion is now added in the render and only one grid is stored
+    //the distortion is now added when the tile is rendered and only one grid is stored
     coOrds[i] = [];
     for (let ii = 0; ii < rowNum; ii++) {
       let randomVal = random(-randomValSum, randomValSum);
       let randomVal2 = random(-randomValSum, randomValSum);
       let z = randomValSum;
-      //STORE VALUES
       let x = canvasPadding + (tileSize / 2) + (i * (tileSize + padding));
       let y = canvasPadding + (tileSize / 2) + (ii * (tileSize + padding));
       coOrds[i][ii] = createVector(x, y, z);
@@ -122,7 +123,7 @@ function renderGrids() {
       let randomVal4 = random(-z, z);
 
       //the render size of a tile is a product of its offset/4 and the tileSize
-      let renderSize = (randomVal * damping) / 4 + tileSize;
+      let renderSize = (randomVal * damping) / 2 + tileSize;
       // constrains the output between tilesize and tileSize*4
       renderSize = constrain(renderSize, tileSize, tileSize * 4);
 
@@ -133,7 +134,9 @@ function renderGrids() {
         strokeWeight(1);
 
         push();
+        //distortion (randomVal*fragDamping) is added in the translate, and rect is rendered at 0,0
         translate((x - renderSize / 4) + (randomVal * fragDamping), (y - renderSize / 4) + (randomVal4 * fragDamping));
+        //based on the rotation boolean rotate, or don't (for each fragment)...
         if (rotation) {
           rotate(random(radians(randomVal, randomVal4)));
         }

@@ -54,18 +54,13 @@ function draw() {
   displayVars(100, 10);
   trackMouse(100);
 
-  //GENERATE VALUES FOR THE GRID
   for (let i = 0; i < colNum; i++) {
     randomValSum += (randomInc * i);
     coOrds[i] = [];
     coOrds2[i] = [];
-
-
     for (let ii = 0; ii < rowNum; ii++) {
-
       let randomVal = random(-randomValSum, randomValSum);
       let randomVal2 = random(-randomValSum, randomValSum);
-
       let z = randomVal;
 
       //STORE VALUES DISTORTED BY THE RANDOMVAL & DAMPING
@@ -86,8 +81,6 @@ function draw() {
   //RENDER THE GRID
   stroke(100, alphaValue / 2);
   strokeWeight(1);
-
-  // noStroke();
 
   for (let i = 0; i < colNum; i++) {
     for (let ii = 0; ii < rowNum; ii++) {
@@ -128,6 +121,7 @@ function draw() {
         let randomVal3 = random(-z, z);
         let randomVal4 = random(-z, z);
 
+        //augment the damping var to be applied to the frgments
         let fragDamping = damping*1.5;
 
         push();

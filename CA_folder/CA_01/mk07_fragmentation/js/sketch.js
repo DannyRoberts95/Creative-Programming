@@ -84,7 +84,7 @@ function draw() {
       //id the stored random val breaks threshold...
       if (coOrds[i][ii].z > fragmentationThreshold) {
 
-        // render 4 tiles each a quarter the size of the original tile and offset them independantly 
+        // render 4 tiles each a quarter the size of the original tile and offset them independantly
         push();
         translate(x-tileWidth/4, y-tileHeight/4);
         rect((randomVal*damping/2),(randomVal4*damping/2),tileWidth/2,tileHeight/2);
