@@ -6,24 +6,22 @@ let padding;
 let colNum;
 let rowNum;
 let canvasPadding;
+let alphaValue;
+let circleCount;
+let endSize;
+let endOffset;
+//vars to store the HSB values for the background
+let bgH,bgS,bgB,bgA;
 
 let randomInc;
 let randomValSum;
 let damping;
 let fragmentationThreshold;
+let ranSeed;
 
 let coOrds = [];
 let colorsLeft = [];
 let colorsRight = [];
-let alphaValue;
-let strokeCol;
-
-//variables for rendering the modlues
-let circleCount;
-let endSize;
-let endOffset;
-
-let ranSeed;
 
 let rotation = true;
 let baseGrid = false;
@@ -33,21 +31,25 @@ let displayInfo = true;
 
 function setup() {
 
-  tileSize = 30;
-  padding = 5;
-  canvasPadding = (tileSize + padding) * 5;
-  colNum = 16;
+  tileSize = 50;
+  //padding is now a related to the tile size
+  padding = -tileSize/10;
+  canvasPadding = (tileSize + padding) * 2;
+  colNum = 10;
   rowNum = 10;
-  randomInc = 0;
+
   randomValSum = 0;
-  damping = 0;
-
-  alphaValue = 100;
-
-  strokeAlphaValue = alphaValue;
-  strokeCol = 0;
-  strokeThickness = 0.5;
   ranSeed = 1;
+
+  alphaValue = 75;
+  strokeAlphaValue = alphaValue;
+  strokeThickness = 1;
+
+  //assign the background color vals
+  bgH = 255;
+  bgS = 75;
+  bgB = 25;
+  bgA = 100;
 
   createCanvas((colNum * (tileSize + padding)) + (canvasPadding * 2), (rowNum * (tileSize + padding)) + (canvasPadding * 2));
   console.log(width, height);
@@ -62,25 +64,23 @@ function setup() {
 
 
 function draw() {
-  noStroke();
 
-  frameRate(5);
-  //random inc range is decreased
+  randomSeed(ranSeed);
+  background(bgH,bgS,bgB,bgA);
+
+
   randomInc = map(mouseX, 0, width, 0, 5);
   randomInc = constrain(randomInc, 0, 5);
   damping = map(mouseY, 0, height, 0, 1);
   damping = constrain(damping, 0, 1);
 
-  randomSeed(ranSeed);
-  background(0);
-
   if (displayInfo) {
-    displayVars(100, 6);
+    displayVars(100, 8);
   }
-
   updateGridValues();
   renderGrids();
-} //END OF DRAW
+
+}//END OF DRAW
 
 //----------------------------------------------------------------------------------------------------------------------------------------
 //GENERATE VALUES FOR THE GRID
@@ -116,12 +116,10 @@ function renderGrids() {
         let baseX = coOrds[i][ii].x;
         let baseY = coOrds[i][ii].y;
         push();
-        if (stroked) {
-          stroke(strokeCol, strokeAlphaValue / 2);
-          strokeWeight(strokeThickness);
-        }
+        stroke(strokeCol, strokeAlphaValue / 2);
+        strokeWeight(strokeThickness);
         translate(baseX, baseY);
-        fill(100);
+        noFill();
         ellipse(0, 0, tileSize, tileSize);
         pop();
       }
@@ -130,81 +128,78 @@ function renderGrids() {
 
   for (let i = 0; i < colNum; i++) {
     for (let ii = 0; ii < rowNum; ii++) {
+
       let lerpAmount = map(i, 0, colNum, 0, 1);
       let col1 = colorsLeft[ii];
       let col2 = colorsRight[ii];
       let interCol = lerpColor(col1, col2, lerpAmount);
+
       let x = coOrds[i][ii].x;
       let y = coOrds[i][ii].y;
       let z = coOrds[i][ii].z;
+
       let randomVal = random(-z, z);
       let randomVal2 = random(-z, z);
 
-      let renderSize = (randomVal * damping) / 2 + tileSize;
-      renderSize = constrain(renderSize, tileSize, tileSize * 2);
-      circleCount = 15
+      let renderSize = abs(randomVal * damping) / 2 + tileSize;
+      circleCount = 15;
       endSize = 0;
-      endOffset = (renderSize - endSize)/2;
-
+      //move the offset 3/4 of the way from the centerpoint
+      endOffset = renderSize;
 
       push();
       noFill();
-      if (stroked) {
-        stroke(strokeCol, strokeAlphaValue);
-        strokeWeight(strokeThickness);
-      } else noStroke();
-      translate(x+(randomVal*damping), y+(randomVal2*damping));
-      if (rotation) rotate(random(radians(-randomVal, randomVal)));
-
+      strokeWeight(strokeThickness);
+      translate(x + (randomVal * damping), y + (randomVal2 * damping));
+      rotate(random(radians(-randomVal, randomVal)));
       for (let iii = 0; iii < circleCount; iii++) {
+        let lerpAmount2 = map(iii, 0, circleCount, 0, 1);
+
+        let col3 = interCol;
+        //the hardcoded color of the center point and the color that will be lerped to from the intercol calculated earlier
+        let col4 = color(49, 80, 83);
+        let interCol2 = lerpColor(col3, col4, lerpAmount2);
+
         var diameter = map(iii, 0, circleCount, renderSize, endSize);
         var offset = map(iii, 0, circleCount, 0, endOffset);
+        stroke(interCol2, alphaValue);
 
-        let lerpAmount2 = map(iii, 0, circleCount, 0, 1);
-        let col3 = color(random(360), random(100), 100, alphaValue);
-        let col4 = interCol;
-        let interCol2 = lerpColor(col4, col3, lerpAmount2);
-
-        stroke(strokeCol, alphaValue);
-        fill(100);
-        if (iii === circleCount - 1) fill(100, alphaValue);
+        // use the background color values to alphafill the first circle of each module
+        if (iii === 0) fill(color(bgH,bgS,bgB,50));
         ellipse(offset, 0, diameter, diameter);
       }
       pop();
+
+
     }
   }
-
-} //END OF DRAW
+}
 
 
 //----------------------------------------------------------------------------------------------------------------------------------------
-//FUNCTIONS
+//POPULATE COLOR ARRAYS
 //----------------------------------------------------------------------------------------------------------------------------------------
 
 function populateColorArrays() {
   for (let i = 0; i < colNum; i++) {
 
-    let hVal = 0;
-    let sVal = 0;
-    let bVal = 15;
-    //alpha is hard coded to 100 to produce gradient effect across the grid
-    colorsLeft[i] = color(hVal, sVal, bVal, 100);
+    //colors are now hard coded
+    let hVal = 195;
+    let sVal = 55;
+    let bVal = 64;
+    colorsLeft[i] = color(hVal, sVal, bVal, alphaValue);
 
-    if (i % 2 == 0) {
-      let hVal = int(random(165, 225));
-      let sVal = 100;
-      let bVal = 90;
-      //alphavaue is lowered so as to produce a gradiant effect while lerping between colors
-      colorsRight[i] = color(hVal, sVal, bVal, alphaValue);
-    } else {
-      let hVal = int(random(225, 285));
-      let sVal = 80;
-      let bVal = 90;
-      //
-      colorsRight[i] = color(hVal, sVal, bVal, alphaValue);
-    }
+    let hVal2 = 18;
+    let sVal2 = 75;
+    let bVal2 = 85;
+    colorsRight[i] = color(hVal2, sVal2, bVal2, alphaValue);
+
   }
 }
+
+//----------------------------------------------------------------------------------------------------------------------------------------
+//DISPLAY VARIABLES
+//----------------------------------------------------------------------------------------------------------------------------------------
 
 function displayVars(col, fontSize) {
   push();
@@ -224,6 +219,10 @@ function displayVars(col, fontSize) {
   pop();
 }
 
+
+//----------------------------------------------------------------------------------------------------------------------------------------
+//KEY / MOUSE PRESSED FUNCTIONS
+//----------------------------------------------------------------------------------------------------------------------------------------
 function mousePressed() {
   ranSeed++;
   populateColorArrays();
@@ -231,7 +230,7 @@ function mousePressed() {
 
 function keyReleased() {
   if (key == 'q' || key == 'Q') noLoop()
-  else if (key == 's' || key == 'S') saveCanvas(`mk15_W:${width}_H:${height}`)
+  else if (key == 's' || key == 'S') saveCanvas(`mk16_W:${width}_H:${height}`)
 
   else if (key == 'r' || key == 'R') {
     if (rotation) {
