@@ -3,7 +3,7 @@
 //----------------------------------------------------------------------------------------------------------------------------------------
 class Grid {
   //define a constructor method for the grid object
-  constructor(moduleSize, padding, cols, rows, canvasPadding,strokeWeight) {
+  constructor(moduleSize, padding, cols, rows, canvasPadding, strokeWeight, circleCount) {
     this.moduleSize = moduleSize;
     this.padding = padding;
     this.colNum = cols;
@@ -16,7 +16,7 @@ class Grid {
     this.offsetSum = 0;
 
     //the amount of circles contained in a module
-    this.circleCount = 15;
+    this.circleCount = circleCount;
     //the size of the smallest circle in the module
     this.endSize = 0;
     //the damping value for the module offset controlled by the mouse
@@ -107,7 +107,7 @@ class Grid {
 
         //icrease the modules size based on how much it has been offset from it's origin
         //the ABS fucntion returns the magnitude of a number, which is always positive
-        this.renderSize = (abs((this.offsetX+this.offsetY)/2 * this.damping) / 2) + this.moduleSize;
+        this.renderSize = (abs((this.offsetX + this.offsetY) / 2 * this.damping) / 2) + this.moduleSize;
         //offset the smallest circle in a module by the renderSize from the center point
         this.endOffset = this.renderSize;
 
@@ -118,14 +118,15 @@ class Grid {
         //translate the the grid coOrds + the offset X and Y
         translate(this.x + (this.offsetX * this.damping), this.y + (this.offsetY * this.damping));
         //rotate the grid matrix within a range defined by this modues offset from its orign
-        rotate(random(radians(-(this.offsetX+this.offsetY),(this.offsetX+this.offsetY))));
+        rotate(random(radians(-(this.offsetX + this.offsetY), (this.offsetX + this.offsetY))));
 
         //for every circle in the module
         for (let iii = 0; iii < this.circleCount; iii++) {
           //crete a liner interpolation percentage based on its position in the module
           this.lerpAmount2 = map(iii, 0, this.circleCount, 0, 1);
           //the hardcoded color of each module center point that will be lerped to from the first intercol calculated earlier
-          this.col3 = color(5, 80, 83);
+          // this.col3 = color(5, 80, 83);
+          this.col3 =color(18, 75, 50);
           //lerp between col3 and the first intercol, based on the second lerp amount calculated earlier
           this.interCol2 = lerpColor(this.interCol, this.col3, this.lerpAmount2);
           //set the stroke color to the second interpolated color
@@ -136,8 +137,8 @@ class Grid {
           //define by how much circle in the module is offset by based on its order in the module
           this.offset = map(iii, 0, this.circleCount, 0, this.endOffset);
 
-          // use the background color values to fill each circle
-          fill(color(bgH, bgS, bgB, 50));
+          // use the background color values to fill each circle with reduced alpha
+          fill(color(bgH, bgS, bgB, 35));
           // draw the ellipse
           ellipse(this.offset, 0, this.diameter, this.diameter);
         }
@@ -152,21 +153,20 @@ class Grid {
   populateGridColorArrays() {
     //for every column..
     for (let i = 0; i < this.colNum; i++) {
-      if(i%2==0){
-        this.hVal = 195;
-        this.sVal = 55;
-        this.bVal = 64;
-        this.colorsLeft[i] = color(this.hVal, this.sVal, this.bVal, 100);
-      }else{
-        this.hVal = 195;
-        this.sVal = 75;
-        this.bVal = 25;
-        this.colorsLeft[i] = color(this.hVal, this.sVal, this.bVal, 100);
-      }
+
+      this.hVal = 175;
+      this.sVal = 55;
+      this.bVal = 75;
+      this.colorsLeft[i] = color(this.hVal, this.sVal, this.bVal, 100);
+
+      color(5, 80, 83)
 
 
-      this.hVal2 = 18;
-      this.sVal2 = 75;
+      // this.hVal2 = 18;
+      // this.sVal2 = 75;
+      // this.bVal2 = 85;
+      this.hVal2 = -15;
+      this.sVal2 = 100;
       this.bVal2 = 85;
       this.colorsRight[i] = color(this.hVal2, this.sVal2, this.bVal2, 100);
 
