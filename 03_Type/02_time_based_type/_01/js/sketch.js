@@ -1,20 +1,24 @@
-//storing the selected font in the font variable
-let font = `sans-serif`;
-let spacing;
+//The var to hold the text typed
+let textTyped = ` `;
+// the array to hold the size of each typed letter
+let fontSizes = [textTyped.length];
 
-function setup(){
+let minFontSize = 15;
+let maxFontSize = 800;
+//var to hold the rythmic font size
+let newFontSize = 0;
+
+//chosen font
+let font = `helvetica`;
+
+function setup() {
   createCanvas(windowWidth, windowHeight);
-  background(255);
-  fill(0)
-
-  //set the font to the font variable
+  noStroke();
   textFont(font);
-  // align the text to the center both horizontally and vertically
-  textAlign(CENTER, CENTER);
-  //spacing is set to the hight of the current font multipled by 1.5
-  spacing = textAscent()*1.5;
-}
+  textAlign(LEFT);
 
-function draw(){
-
+  //store a fontsize for each letter in the textTyped place holder based on minFontSize
+  for (var i = 0; i < textTyped.length; i++) {
+    fontSizes[i] = minFontSize;
+  }
 }
