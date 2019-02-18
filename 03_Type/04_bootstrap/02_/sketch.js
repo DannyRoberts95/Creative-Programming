@@ -77,6 +77,7 @@ function draw() {
 }
 
 function setUpText() {
+  //graphic is created with canvas W and H variables
   textImg = createGraphics(canvasW, canvasH);
   textImg.pixelDensity(1);
   textImg.background(225);
