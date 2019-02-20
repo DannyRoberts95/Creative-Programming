@@ -54,6 +54,7 @@ function setup() {
 
   var canvasDiv = document.getElementById("canvas-holder");
   canvasW = canvasDiv.offsetWidth;
+  canvasH = canvasDiv.offsetHeight;
   canvas = createCanvas(canvasW - 25, canvasH);
   canvas.parent("canvas-holder");
 
