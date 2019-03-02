@@ -6,11 +6,10 @@ let textImg;
 
 let particles = [];
 
-let pixelSkip = 10;
-let unitSize = 5;
-let fontSize = 100;
+let pixelSkip = 12;
+let fontSize = 150;
 
-let textToBeRendered = "I.A.D.T";
+let textToBeRendered = "Javawax";
 
 function preload() {
   font = loadFont("data/FreeSansBold.ttf");
@@ -33,9 +32,22 @@ function setup() {
 }
 
 function draw() {
-  background(90);
+  background(80);
 
-  for (let p of particles) p.run();
+
+  let connectionDistance = pixelSkip*2;
+  for (let p of particles) {
+    p.run();
+    for (let p2 of particles) {
+      let d = dist(p.loc.x, p.loc.y, p2.loc.x, p2.loc.y);
+      if (d > connectionDistance && p != p2) continue;
+
+      let a = map(d,0,connectionDistance,20,5);
+      strokeWeight(1);
+      stroke(0,a);
+      line(p.loc.x, p.loc.y, p2.loc.x, p2.loc.y);
+    }
+  }
 }
 
 //********************************************************************************************************
@@ -48,7 +60,7 @@ function generateParticles() {
       let index = floor((x + y * textImg.width) * 4);
 
       if (textImg.pixels[index] < 128) {
-        particles.push(new Particle(x, y, unitSize, color(0, 0, 0)));
+        particles.push(new Particle(x, y, 1, color(90)));
         // particles.push(new Particle(random(width), random(height), unitSize, color(0, 0, 0)));
       }
     }
@@ -77,14 +89,6 @@ function createInputs() {
   textInput.parent(`input-holder`);
   textInput.input(function() {
     textToBeRendered = textInput.value();
-    setUpText();
-    generateParticles();
-  });
-
-  unitSizelider = createSlider(1, 50, unitSize);
-  unitSizelider.parent(`size-holder`);
-  unitSizelider.mouseReleased(function() {
-    unitSize = unitSizelider.value();
     setUpText();
     generateParticles();
   });

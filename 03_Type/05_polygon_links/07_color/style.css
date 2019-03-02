@@ -1,0 +1,23 @@
+#mydiv {
+  position: absolute;
+  z-index: 9;
+}
+
+#mydivheader {
+  cursor: move;
+  z-index: 10;
+  text-align: center;
+}
+
+.box {
+  padding: 7.5px;
+  margin-bottom: 0px;
+}
+
+p {
+  margin: 0px;
+}
+
+canvas {
+  margin: -10px;
+}

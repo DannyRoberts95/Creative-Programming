@@ -1,4 +1,4 @@
-'use strict'
+"use strict";
 
 let colorCount = 100;
 
@@ -7,7 +7,7 @@ let satVals = [];
 let brightVals = [];
 
 // define an alpha value for the fragments
-let alphaVal = 22;
+let alphaVal = 85;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -38,7 +38,7 @@ function draw() {
 
   for (let i = 0; i < rowCount; i++) {
     let fragmentNumber = i + 1;
-    let fragmentWidths = []
+    let fragmentWidths = [];
 
     for (let ii = 0; ii < fragmentNumber; ii++) {
       if (random() < 0.075) {
@@ -64,7 +64,6 @@ function draw() {
 
     let fragXpos = 0;
     for (let ii = 0; ii < fragmentNumber; ii++) {
-
       let index = counter % colorCount;
 
       let x = fragXpos;
@@ -76,12 +75,16 @@ function draw() {
       //color 1 for the gradient is black
       let col1 = color(0);
       // color 2 for the gradiant pulled from the HSB arrays
-      let col2 = color(hueVals[index], satVals[index], brightVals[index], alphaVal);
+      let col2 = color(
+        hueVals[index],
+        satVals[index],
+        brightVals[index],
+        alphaVal
+      );
       //pass the location and colors to the gradient function
       gradient(x, y, w, h, col2, col1);
       fragXpos += fragmentWidths[ii];
       counter++;
-
     }
   }
 }
@@ -106,13 +109,14 @@ function mouseReleased() {
 }
 
 function keyPressed() {
-  if (key == 's' || key == 'S') saveCanvas(gd.timestamp(), 'png');
-  if (key == 'c' || key == 'C') {
-
+  if (key == "s" || key == "S") saveCanvas(gd.timestamp(), "png");
+  if (key == "c" || key == "C") {
     let colors = [];
     for (let i = 0; i < hueValues.length; i++) {
-      colors.push(color(hueValues[i], saturationValues[i], brightnessValues[i]));
+      colors.push(
+        color(hueValues[i], saturationValues[i], brightnessValues[i])
+      );
     }
-    writeFile([gd.ase.encode(colors)], gd.timestamp(), 'ase');
+    writeFile([gd.ase.encode(colors)], gd.timestamp(), "ase");
   }
 }

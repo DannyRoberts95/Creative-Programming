@@ -1,37 +1,49 @@
 class Particle {
   constructor(x, y, r, col) {
-    //vectors
-    this.loc = createVector(random(width), random(height));
+    this.loc = createVector(
+      random(-width, width * 2),
+      random(-height, height * 2)
+    );
     this.origin = createVector(x, y);
     this.vel = p5.Vector.random2D();
     this.acc = createVector();
-    this.maxSpeed = 3;
-    this.maxForce = 0.3;
+    this.maxSpeed = 20;
+    this.maxForce = 7.5;
 
-    //display vars
+    //display lets
     this.alphaValue = 100;
-    this.hue = col.h;
-    this.sat = col.s;
-    this.bright = col.b;
+    this.col = col;
     this.radius = r;
   }
 
-  run() {
+  run(particlesArray) {
     this.seek(this.origin);
+    this.flee(createVector(mouseX, mouseY));
     this.update();
-    this.display();
   }
 
   seek(target) {
-    var desired = p5.Vector.sub(target, this.loc);
-    var d = desired.mag();
-    var speed = this.maxSpeed;
-    if (d < 100) {
+    let desired = p5.Vector.sub(target, this.loc);
+    let d = desired.mag();
+    let speed = this.maxSpeed;
+    if (d < fontSize * 0.5) {
       speed = map(d, 0, 100, 0, this.maxSpeed);
     }
     desired.setMag(speed);
-    var steer = p5.Vector.sub(desired, this.vel);
-    this.applyForce(steer)
+    let steer = p5.Vector.sub(desired, this.vel);
+    this.applyForce(steer);
+  }
+
+  flee(target) {
+    let desired = p5.Vector.sub(target, this.loc);
+    let d = desired.mag();
+    if (d < fontSize * 0.5) {
+      let speed = map(d, 0, 100, 0, this.maxSpeed);
+      desired.setMag(speed);
+      let steer = p5.Vector.sub(desired, this.vel);
+      steer.mult(-1);
+      this.applyForce(steer);
+    }
   }
 
   update() {
@@ -52,15 +64,6 @@ class Particle {
     } else if (this.loc.y >= height + buffer) {
       this.loc.y = 0 - buffer;
     }
-  }
-
-  display() {
-    push();
-    fill(this.hue, this.sat, this.bright, this.alphaValue);
-    translate(this.loc.x, this.loc.y);
-    rotate(this.vel.heading());
-    ellipse(0, 0, this.radius * 2, this.radius * 2);
-    pop();
   }
 
   applyForce(force) {
