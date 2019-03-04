@@ -3,16 +3,16 @@ let textImg;
 
 let particles = [];
 
-let pixelSkip = 20;
-let fontSize = 250;
+let pixelSkip = 25;
+let fontSize = 300;
 let randomness = 0;
 let connectionFactor = 3;
 let strokeW = 0.5;
-let textToBeRendered = "FORM";
+let textToBeRendered = "LINKS";
 let degenerationRate = 0;
 
-let backgroundColor = 17;
-let textColor = 255;
+// let backgroundColor = 17;
+// let textColor = 255;
 
 function preload() {
   font = loadFont("data/Montserrat-Bold.ttf");
@@ -132,10 +132,10 @@ function createInputs() {
   textInput = createInput(textToBeRendered);
   textInput.parent(`input-holder`);
 
-  colorPickerText = createInput("#ff0000", "color");
+  colorPickerText = createInput("#e6e6e6", "color");
   colorPickerText.parent(`colorPickerText-holder`);
 
-  colorPickerBackground = createInput("#ffffff", "color");
+  colorPickerBackground = createInput("#1a1a1a", "color");
   colorPickerBackground.parent(`colorPickerBackground-holder`);
 
   pixelSkipInput = createSlider(10, 50, pixelSkip);
@@ -188,4 +188,14 @@ function reset() {
   setUpText();
   generateParticles();
   clear();
+}
+
+function keyPressed() {
+  if (key === "f" || key === "F") {
+    fullscreen(true);
+    resizeCanvas(windowWidth, windowHeight);
+    // setup();
+  } else if (key === "n" || key === "N") {
+    noLoop();
+  }
 }

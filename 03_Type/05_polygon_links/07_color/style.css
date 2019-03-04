@@ -9,13 +9,14 @@
   text-align: center;
 }
 
-.box {
-  padding: 7.5px;
-  margin-bottom: 0px;
+.dataInput {
+  padding: 0px;
+  margin-bottom: 10px;
 }
 
 p {
   margin: 0px;
+  font-size: 12px;
 }
 
 canvas {
