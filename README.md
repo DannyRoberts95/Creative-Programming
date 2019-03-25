@@ -10,5 +10,5 @@ This respository is a collection of examples that explore color, shape and typog
 
 ## Examples
 
-[Contrasting Color Square](01_Colors/01_colorSquare/_03)
-[Contrasting Color Square](01_Colors/02_colorGrid/_04)
+1. [Contrasting Color Square](01_Colors/01_colorSquare/_03/)
+2. [Contrasting Color Square](01_Colors/02_colorGrid/_04/)
