@@ -5,8 +5,8 @@ This sketch creates a scalable square that mapped to the Mouse X. The fill of th
 ## Sketch Iterations
 
 1. [01](_01)
-2. [02](_02/index.html)
-3. [03](_03/index.html)
+2. [02](_02)
+3. [03](_03)
 
 ## Step 1
 
