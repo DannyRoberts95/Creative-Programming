@@ -51,3 +51,22 @@ Generate color palettes that adhere to a specific rulesets.
 Press 1-9 to change the rules by which colors are generated.
 Press "C" to save the image as an ASE swatch file.
 Press "S" to save the image as a PNG file.
+
+### Palette generation from Color Rules
+
+[View here](06_generateColorPal/build/)
+
+Generate color palettes that adhere to a specific rulesets.
+
+Press 1-9 to change the rules by which colors are generated.
+Press "C" to save the image as an ASE swatch file.
+Press "S" to save the image as a PNG file.
+
+### Fragmentation and Color Rules
+
+[View here](07_fragments/build/)
+
+Generate rows of fragments colored according to a ruleset.
+Click to generate new fragments.
+Press "C" to save the image as an ASE swatch file.
+Press "S" to save the image as a PNG file.
