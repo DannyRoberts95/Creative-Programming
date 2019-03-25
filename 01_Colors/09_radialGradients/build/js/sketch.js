@@ -12,7 +12,7 @@ let generationRate = 0.45;
 function setup() {
   createCanvas(windowWidth, windowHeight);
   colorMode(HSB, 360, 100, 100, 100);
-  randomSeed(10);
+  randomSeed(100);
   noStroke();
 }
 
