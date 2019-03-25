@@ -10,5 +10,4 @@ This respository is a collection of examples that explore color, shape and typog
 
 ## Examples
 
-1. [Color Square](01_Colors/01_colorSquare/testName/)
-2. [Color Grid](01_Colors/02_colorGrid/_04/)
+1. [Color Square](01_Colors/01_colorSquare/build/)
