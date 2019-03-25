@@ -4,5 +4,5 @@ This respository is a collection of examples that explore color, shape and typog
 
 ## Chapters
 
-[Color](01_Colors/)
-[Shape](02_Shape/)
+1. [Color](01_Colors/)
+1. [Shape](02_Shape/)
