@@ -7,6 +7,7 @@ This respository is a collection of examples that explore color, shape and typog
 These are the two works produced after the research in these areas.
 
 [Typographic Links](00_Outputs/links)
+
 [Bearings](00_Outputs/bearings)
 
 # Chapters
