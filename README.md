@@ -28,4 +28,4 @@ A program for generating an interactive color grid based off the HSB color model
 
 A program for generating an interactive color wheel of custom shapes based off the HSB color model.
 
-[Color Wheel](01_Colors/03_segmentedTriangles/build/)
+[Color Wheel](01_Colors/03_segmentTriangles/build/)
