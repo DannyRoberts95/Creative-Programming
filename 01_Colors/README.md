@@ -56,7 +56,7 @@ Press "S" to save the image as a PNG file.
 
 [View here](06_generateColorPal/build/)
 
-Generate color palettes that adhere to a specific rulesets.
+Generating color palettes that adhere to a specific rulesets.
 
 Press 1-9 to change the rules by which colors are generated.
 Press "C" to save the image as an ASE swatch file.
@@ -66,7 +66,16 @@ Press "S" to save the image as a PNG file.
 
 [View here](07_fragments/build/)
 
-Generate rows of fragments colored according to a ruleset.
+Generating rows of fragments colored according to a ruleset.
+Click to generate new fragments.
+Press "C" to save the image as an ASE swatch file.
+Press "S" to save the image as a PNG file.
+
+### Fragmentation with Alpha and Radial Gradients
+
+[View here](09_radialGradients/build/)
+
+Generating rows of fragments colored by radial gradients according to a ruleset.
 Click to generate new fragments.
 Press "C" to save the image as an ASE swatch file.
 Press "S" to save the image as a PNG file.
