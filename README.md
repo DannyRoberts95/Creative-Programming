@@ -1,4 +1,4 @@
-# Generative Design & Creative Coding
+#Generative Design & Creative Coding
 
 This respository is a collection of examples that explore color, shape and typography through use of creative programming.
 

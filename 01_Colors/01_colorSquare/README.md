@@ -4,7 +4,9 @@ This sketch creates a scalable square that mapped to the Mouse X. The fill of th
 
 ## Sketch Iterations
 
-[01](_01/)
+1. [01](_01/)
+2. [02](_02/)
+3. [03](_03/)
 
 ## Step 1
 
