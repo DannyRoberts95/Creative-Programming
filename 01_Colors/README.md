@@ -17,7 +17,7 @@ This section will touch on:
 
 [View here](01_colorSquare/build/)
 
-**Generating and contrasting colors.\_\_**
+**Generating and contrasting colors.**
 
 Press "S" to save the image as a PNG file.
 
