@@ -1,8 +1,15 @@
-# Color
+# Section 1 - Color and Color Theory
 
 This repository is a collection of P5 sketches exploring the area of color and color theory.
 
-## Section 1 - Color and Color Theory
+This section will cover the topics of:
+
+- color generation
+- comparison
+- interpolation
+- palette generation from rule and images
+- fragmentation
+- gradients
 
 ### Color Compare
 
