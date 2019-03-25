@@ -2,6 +2,10 @@
 
 This respository is a collection of examples that explore color, shape and typography through use of creative programming.
 
+# Final Pieces
+
+These are the two works produced after the research in these areas.
+
 # Chapters
 
 1. [Color](01_Colors/)
