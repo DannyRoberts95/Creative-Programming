@@ -12,20 +12,14 @@ This respository is a collection of examples that explore color, shape and typog
 
 ## Section 1 - Color and Color Theory
 
-### Color Compare
+Generating and contrasting colors.
 
-A program for generating and contrasting colors.
+[### Color Compare](01_Colors/01_colorSquare/build/)
 
-[Color Square](01_Colors/01_colorSquare/build/)
+Generating an interactive color grid based off the HSB color model.
 
-### HSB Color Grid
+[### HSB Color Grid](01_Colors/02_colorGrid/build/)
 
-A program for generating an interactive color grid based off the HSB color model.
+Generating an interactive color wheel of custom shapes based off the HSB color model.
 
-[Color Grid](01_Colors/02_colorGrid/build/)
-
-### HSB Color Wheel
-
-A program for generating an interactive color wheel of custom shapes based off the HSB color model.
-
-[Color Wheel](01_Colors/03_segmentTriangles/build/)
+[### HSB Color Wheel](01_Colors/03_segmentTriangles/build/)
