@@ -11,6 +11,7 @@ function preload() {
 }
 
 function setup() {
+  cursor(CROSS);
   createCanvas(600, 600);
   noCursor();
   noStroke();

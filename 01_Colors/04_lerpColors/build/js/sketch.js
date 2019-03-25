@@ -23,6 +23,7 @@ function setup() {
   boxHeight = h / tileCountY;
 
   createCanvas(w, h);
+  cursor(CROSS);
   colorMode(HSB);
   noStroke();
   shakeColors();
@@ -71,29 +72,30 @@ function shakeColors() {
     let col2 = floor(random(0, 100));
     let col3 = floor(random(0, 100));
     let randomColor = color(col1, col2, col3);
-    colorsLeft[i]= randomColor;
+    colorsLeft[i] = randomColor;
   }
   for (let i = 0; i < tileCountY; i++) {
     let col1 = floor(random(100, 255));
-    let col2 = floor(random(100,255));
+    let col2 = floor(random(100, 255));
     let col3 = floor(random(100, 255));
     let randomColor = color(col1, col2, col3);
-    colorsRight[i]= randomColor;
+    colorsRight[i] = randomColor;
   }
 }
 
 function keyPressed() {
   //add in the keypressed functionality to...
   // export color array as an ASE file
-  if (key == 'c' || key == 'C') writeFile([gd.ase.encode(colors)], gd.timestamp(), 'ase');
+  if (key == "c" || key == "C")
+    writeFile([gd.ase.encode(colors)], gd.timestamp(), "ase");
   //save canvas as a PNG
-  if (key == 's' || key == 'S') saveCanvas(gd.timestamp(), 'png');
+  if (key == "s" || key == "S") saveCanvas(gd.timestamp(), "png");
   //alter the interpolation variable using keyPressed
-  if (key == '1') interpolateShortest = true;
-  if (key == '2') interpolateShortest = false;
+  if (key == "1") interpolateShortest = true;
+  if (key == "2") interpolateShortest = false;
 }
 
 // add in mouse interaction to generate a new color palette
-function mouseReleased(){
+function mouseReleased() {
   shakeColors();
 }

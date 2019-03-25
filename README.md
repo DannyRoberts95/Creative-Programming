@@ -46,6 +46,16 @@ Press "S" to save the image as a PNG file.
 [View here](01_Colors/05_imageProcessing/build/)
 
 Reducing the resolution of an image and sampling the pixelated image to generate an ASE swatch file.
-press 1 - 5 to load new images.
+Press 1 - 5 to load new images.
+Press "C" to save the image as an ASE swatch file.
+Press "S" to save the image as a PNG file.
+
+### Palette generation from Color Rules
+
+[View here](01_Colors/06_generateColorPal/build/)
+
+Generate color palettes that adhere to a specific rulesets.
+
+Press 1-9 to change the rules by which colors are generated.
 Press "C" to save the image as an ASE swatch file.
 Press "S" to save the image as a PNG file.
