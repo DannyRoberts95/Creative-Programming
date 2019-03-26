@@ -105,6 +105,18 @@ Press "S" to save the image as a PNG file.
 
 ---
 
+## Fragmentation with Alpha
+
+[View here](08_alphaFragments/build/)
+
+**Generating rows of fragments colored according to a ruleset and distorted by noise.**
+
+Click to generate new fragments.
+
+Press "S" to save the image as a PNG file.
+
+---
+
 ### Fragmentation with Alpha and Radial Gradients
 
 [View here](09_radialGradients/build/)
