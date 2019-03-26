@@ -48,7 +48,6 @@ function draw() {
       push();
       translate(x + tileSize / 2, y + tileSize / 2);
       rotate(random(-maxOffset, maxOffset));
-      fill(fillColor);
       noFill();
       stroke(strokeCol);
       strokeWeight(minStrokeWeight);
