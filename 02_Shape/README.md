@@ -10,23 +10,59 @@ This section will touch on:
 
 [View here](01_line_circle/build/)
 
-[View Code](01_line_circle/)
-
 **Creating a circle through use of vertices and begin shape.**
 
 Press "S" to save the image as a PNG file.
 
 ---
 
-### Vertex Shape
+### Custom Vertex Shape
 
 [View here](02_changing_shape/build/)
 
-[View Code](02_changing_shape/)
-
-**Creating a custom shape by altering the number of vertices it is composed of.**
+**Creating a custom shape by altering the number of vertex points it is composed of.**
 
 Click and drag to draw the shape. Alter the shape by moving the mouse around the screen.
+
+Press 1 to randomise the color;
+
+Press "Back Space" to clear the screen
+
+Press "S" to save the image as a PNG file.
+
+---
+
+### Repetition Within a Grid System
+
+[View here](04_mouse_interaction/build/)
+
+**Creating a grid system populated by shapes rotated to form patterns.**
+
+Press 1 - 3 to alter the stroke style.
+
+Click the mouse to generate a new grid system;
+
+Press "S" to save the image as a PNG file.
+
+---
+
+### Orienting a Grid System Towards the Mouse
+
+[View here](05_mouse_rotation/build/)
+
+**Rotating the elements of a grid system towards the mouse using ATAN2.**
+
+Press 1 - 3 to alter the stroke style.
+
+Press "S" to save the image as a PNG file.
+
+---
+
+### Orienting a Grid System of SVG elements Towards the Mouse
+
+[View here](06_svg/build/)
+
+**Rotating the SVG elements of a grid system towards the mouse using ATAN2.**
 
 Press "S" to save the image as a PNG file.
 
