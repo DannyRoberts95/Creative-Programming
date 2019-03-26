@@ -85,6 +85,8 @@ Press "S" to save the image as a PNG file.
 
 [View here](06_generateColorPal/build/)
 
+[View code iterations](06_generateColorPal/)
+
 **Generating color palettes that adhere to a specific rulesets.**
 
 Press 1-9 to change the rules by which colors are generated.
