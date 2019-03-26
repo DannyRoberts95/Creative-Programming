@@ -67,3 +67,27 @@ Press "S" to save the image as a PNG file.
 Press "S" to save the image as a PNG file.
 
 ---
+
+### Offsetting elements of a grid based on mouse location
+
+[View here](07_offsets/build/)
+
+**altering the size and offset of grid elements using the mouse.**
+
+Click to change color.
+
+Press "S" to save the image as a PNG file.
+
+---
+
+### Offset with Multiple Grid Systems
+
+[View here](08_double_grid/build/)
+
+**Obscuring one offset grid with a static grid.**
+
+Click to change color.
+
+Press "S" to save the image as a PNG file.
+
+---
