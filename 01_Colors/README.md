@@ -5,7 +5,6 @@ This repository is a collection of P5 sketches exploring the area of color and c
 This section will touch on:
 
 - color generation
-- comparison
 - interpolation
 - palette generation from rule and images
 - fragmentation
@@ -13,7 +12,9 @@ This section will touch on:
 
 ---
 
-### Color Compare
+### 01_Color Compare
+
+![alt text](01_colorSquare/images/01.png "Color Compare")
 
 [View here](01_colorSquare/build/)
 

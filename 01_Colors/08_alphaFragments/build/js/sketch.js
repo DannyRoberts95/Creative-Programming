@@ -7,7 +7,7 @@ let satVals = [];
 let brightVals = [];
 
 // define an alpha value for the fragments
-let alphaVal = 75;
+let alphaVal = 50;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -19,19 +19,19 @@ function setup() {
 
 function draw() {
   noLoop();
-  background(0);
+  background(100);
 
   alphaVal = map(mouseX, 0, width, 0, 100);
 
   for (let i = 0; i < colorCount; i++) {
-    if (i % 2 == 0) {
-      hueVals[i] = random(150, 270);
+    if (i % 2 === 0) {
+      hueVals[i] = random(360);
       satVals[i] = 100;
-      brightVals[i] = 80;
+      brightVals[i] = 90;
     } else {
-      hueVals[i] = random(0, 75);
-      satVals[i] = random(50);
-      brightVals[i] = 100;
+      hueVals[i] = random(100, 275);
+      satVals[i] = random(50, 100);
+      brightVals[i] = 25;
     }
   }
 
@@ -76,14 +76,19 @@ function draw() {
       let w = fragmentWidths[ii];
 
       //color 1 for the gradient is black
-      let col1 = color(100);
+      let col1 = color(0);
       // color 2 for the gradiant pulled from the HSB arrays
       let col2 = color(
-        hueVals[index],
-        satVals[index],
+        // hueVals[index],
+        // satVals[index],
         brightVals[index],
         alphaVal
       );
+
+      if (random() < 0.01) {
+        col2 = color(5, 100, 100, 100);
+      }
+
       //pass the location and colors to the gradient function
       gradient(x, y, w, h, col2, col1);
       fragXpos += fragmentWidths[ii];

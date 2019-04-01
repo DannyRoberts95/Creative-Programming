@@ -8,6 +8,7 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   colorMode(HSB, 360, 100, 100, 100);
   rectMode(CENTER);
+  cursor(CROSS);
   ellipseMode(CENTER);
   strokeCap(ROUND);
   angleMode(DEGREES);
@@ -20,8 +21,8 @@ function draw() {
   tileSize = width / tileNumber;
   let sWidth = 5;
 
-  for (let x = tileSize; x <= width; x += tileSize) {
-    for (let y = tileSize; y <= height; y += tileSize) {
+  for (let x = 0; x <= width + tileSize; x += tileSize) {
+    for (let y = 0; y <= height; y += tileSize) {
       let size = tileSize / 2;
       let posX = x;
       let posY = y;
@@ -31,7 +32,7 @@ function draw() {
       translate(posX, posY);
       rotate(angle);
       let h = map(dist(x, y, mouseX, mouseY), 0, width, 250, 320);
-      stroke(h, 100, 100, 100);
+      stroke(0);
       strokeWeight(sWidth);
       line(-0, -0, size, size);
       pop();
