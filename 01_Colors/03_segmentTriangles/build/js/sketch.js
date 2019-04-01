@@ -15,7 +15,7 @@ function setup() {
 
 function draw() {
   background(h);
-  let stepNumber = map(mouseX, 0, width, 10, 360);
+  let stepNumber = map(mouseX, 0, width, 5, 360);
   let angInc = floor(360 / stepNumber);
   let radius = height / 2.5;
 
@@ -37,7 +37,7 @@ function draw() {
     //the same is done for the Y value, except using SIN instead of COS
     let vy = radius * sin(radians(angle));
     //the segments fill corresponds to its angle in the circle, and it's S & B values are mapped to the mouse.
-    fill(angle, mouseX, mouseY);
+    fill(angle, mouseX, h);
     //place the vertex
     vertex(vx, vy);
   }
@@ -45,4 +45,9 @@ function draw() {
   endShape();
   //return to matrix state saved by push
   pop();
+}
+
+//on key press, if the key is 'S' save the canvas using the gd timestamp function. file saves as a png
+function keyPressed() {
+  if (key == "s" || key == "S") saveCanvas(gd.timestamp(), "png");
 }

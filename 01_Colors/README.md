@@ -30,7 +30,7 @@ Press "S" to save the image as a PNG file.
 
 **Generating an interactive color grid based off the HSB color model.**
 
-![alt text](01_colorSquare/images/01.png "image")
+![alt text](02_colorGrid/images/01.png "image")
 
 Press "S" to save the image as a PNG file.
 
@@ -42,7 +42,7 @@ Press "S" to save the image as a PNG file.
 
 **Generating an interactive color wheel of custom shapes based off the HSB color model.**
 
-![alt text](01_colorSquare/images/01.png "image")
+![alt text](03_segmentTriangles/images/01.png "image")
 
 Press "S" to save the image as a PNG file.
 
@@ -54,7 +54,7 @@ Press "S" to save the image as a PNG file.
 
 **Generating two color arrays and interpolating colors between those arrays.**
 
-![alt text](01_colorSquare/images/01.png "image")
+![alt text](04_lerpColors/images/01.png "image")
 
 Click the mouse to generate new colors.
 
@@ -68,7 +68,7 @@ Press "S" to save the image as a PNG file.
 
 **Reducing the resolution of an image and sampling the pixelated image to generate an ASE swatch file.**
 
-![alt text](01_colorSquare/images/01.png "image")
+![alt text](05_imageProcessing/images/01.png "image")
 
 Press 1 - 5 to load new images.
 
@@ -84,23 +84,7 @@ Press "S" to save the image as a PNG file.
 
 **Generate color palettes that adhere to a specific rulesets.**
 
-![alt text](01_colorSquare/images/01.png "image")
-
-Press 1-9 to change the rules by which colors are generated.
-
-Press "S" to save the image as a PNG file.
-
----
-
-### Palette generation from Color Rules
-
-[View here](06_generateColorPal/build/)
-
-[View code iterations](06_generateColorPal/)
-
-**Generating color palettes that adhere to a specific rulesets.**
-
-![alt text](01_colorSquare/images/01.png "image")
+![alt text](06_generateColorPal/images/01.png "image")
 
 Press 1-9 to change the rules by which colors are generated.
 
@@ -114,7 +98,7 @@ Press "S" to save the image as a PNG file.
 
 **Generating rows of fragments colored according to a ruleset.**
 
-![alt text](01_colorSquare/images/01.png "image")
+![alt text](07_fragments/images/01.png "image")
 
 Click to generate new fragments.
 
@@ -128,7 +112,7 @@ Press "S" to save the image as a PNG file.
 
 **Generating rows of fragments colored according to a ruleset and distorted by noise.**
 
-![alt text](01_colorSquare/images/01.png "image")
+![alt text](08_alphaFragments/images/01.png "image")
 
 Click to generate new fragments.
 
@@ -142,7 +126,7 @@ Press "S" to save the image as a PNG file.
 
 **Generating rows of fragments colored by radial gradients according to a ruleset.**
 
-![alt text](01_colorSquare/images/01.png "image")
+![alt text](09_radialGradients/images/01.png "image")
 
 Click to generate new fragments.
 
