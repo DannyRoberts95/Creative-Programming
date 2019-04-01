@@ -78,7 +78,7 @@ Press "S" to save the image as a PNG file.
 
 ---
 
-### Offsetting elements of a grid based on mouse location
+### Offsetting Elements Based on Mouse Location
 
 [View here](07_offsets/build/)
 
