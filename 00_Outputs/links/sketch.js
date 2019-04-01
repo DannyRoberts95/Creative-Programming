@@ -3,7 +3,7 @@ let font; // var for the font
 let textImg; // var to store the txt image
 let particles = []; //array to hold the particles
 
-let resolution = 25; //pixels ample rate
+let resolution = 20; //pixels ample rate
 let fontSize = 175; //how big the text will be
 let distortion = 0; //by how much the text will be distorted
 let linkThreshold = 2; //resolution * linkThreshold = the link distance of particles
