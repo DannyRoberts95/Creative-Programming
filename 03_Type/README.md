@@ -22,6 +22,6 @@ Press "S" to save the image as a PNG file.
 
 **As the user types, letters are sized according to the time taken between keystrokes, emphasising the rhythm with which the text is typed.**
 
-![alt text](01_size_shape/images/01.png "image")
+![alt text](02_time_based_type/images/01.png "image")
 
 ---
