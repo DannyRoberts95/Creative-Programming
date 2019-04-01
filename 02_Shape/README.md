@@ -110,7 +110,7 @@ Press "S" to save the image as a PNG file.
 
 [View here](09_distance_scale/build/)
 
-**Sizing elements in a grid based on their distance from the mouse.**
+**Sizing and rotating elements in a grid based on their distance from the mouse.**
 
 ![alt text](09_distance_scale/images/01.png "image")
 
