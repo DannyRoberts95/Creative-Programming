@@ -8,7 +8,7 @@ let fontSize = 175; //how big the text will be
 let distortion = 0; //by how much the text will be distorted
 let linkThreshold = 2; //resolution * linkThreshold = the link distance of particles
 let strokeW = 0.5; // line stroke weight
-let textToBeRendered = "LINKS";
+let textToBeRendered = "DANIEL";
 let degenerationRate = 0; // Chance for particles not to be spawned even when spawing conditions are met
 
 //preload the font
