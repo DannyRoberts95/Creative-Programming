@@ -247,7 +247,6 @@ function updateInputLables() {
   //get the target element by its ID, and set its inner HTML
   document.getElementById("resolution-text").innerHTML =
     "Resolution: " + resolution;
-
   document.getElementById("fontSize-text").innerHTML = "Font Size: " + fontSize;
   document.getElementById("strokeWeight-text").innerHTML =
     "Stroke Weight: " + strokeW;
