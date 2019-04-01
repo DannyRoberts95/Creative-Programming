@@ -4,7 +4,7 @@ let textImg; // var to store the txt image
 let particles = []; //array to hold the particles
 
 let resolution = 25; //pixels ample rate
-let fontSize = 300; //how big the text will be
+let fontSize = 175; //how big the text will be
 let distortion = 0; //by how much the text will be distorted
 let linkThreshold = 2; //resolution * linkThreshold = the link distance of particles
 let strokeW = 0.5; // line stroke weight
@@ -138,7 +138,7 @@ function createInputs() {
       updateInputLables();
     });
 
-  strokeWeightSlider = createSlider(0, 10, strokeW)
+  strokeWeightSlider = createSlider(1, 10, strokeW)
     .parent(`strokeWeight-holder`)
     .addClass(`dataInputSlider`)
     .changed(() => {
