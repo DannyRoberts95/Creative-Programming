@@ -61,6 +61,10 @@ function draw() {
   }
 }
 
+function keyPressed() {
+  if (key == "s" || key == "S") saveCanvas(gd.timestamp(), "png");
+}
+
 function mousePressed() {
   rSeed++;
   col1 = color(random(45, 125), 50, 100);

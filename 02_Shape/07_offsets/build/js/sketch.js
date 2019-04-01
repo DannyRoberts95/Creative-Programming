@@ -8,7 +8,7 @@ let tileSize;
 let minModuleRadius = 5;
 let maxModuleRadius = 50;
 let minStrokeWeight = 1;
-let maxStrokeWeight = 5;
+let maxStrokeWeight = 25;
 let strokeCol, fillColor, backgroundColor;
 
 let rSeed = 1;
@@ -39,6 +39,13 @@ function draw() {
       let yOffset = random(-maxOffset, maxOffset);
       x += xOffset;
       y += yOffset;
+      let sw = map(
+        abs(xOffset + yOffset) / 2,
+        0,
+        200,
+        minStrokeWeight,
+        maxStrokeWeight
+      );
       let r = constrain(
         map(mouseY, 0, width, minModuleRadius, maxModuleRadius),
         minModuleRadius,
@@ -50,16 +57,19 @@ function draw() {
       rotate(random(-maxOffset, maxOffset));
       noFill();
       stroke(strokeCol);
-      strokeWeight(minStrokeWeight);
+      strokeWeight(sw);
       rect(0, 0, r * 2, r * 2);
       pop();
     }
   }
 }
 
+function keyPressed() {
+  if (key == "s" || key == "S") saveCanvas(gd.timestamp(), "png");
+}
+
 function mousePressed() {
   strokeCol = color(random(45, 125), 50, 100);
   backgroundColor = color(random(200, 300), 90, 25);
-
   rSeed++;
 }
