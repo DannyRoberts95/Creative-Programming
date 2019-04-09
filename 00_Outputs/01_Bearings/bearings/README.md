@@ -1,10 +1,14 @@
 # Bearings
 
+## Final Graphic
+
+![alt text](images/final.png "image")
+
 ### TLDR
 
-This project revolved around the design of a graphic for a book on generative design. The project explores the use of color, shape and grid based patterns through creating a program.
+This project revolved around the design of a graphic for a book cover on generative design. The project explores the use of color, shape and grid based patterns through creating a javaScript program to create these graphics.
 
-### Basis
+### Project Basis
 
 “Tension is highest when order borders on chaos. Individual forms abandon their strict arrangement in the dynamic grid and submit to random configurations. Elements inclined to the grid and those averse to it fight for visual supremacy. It is the moment of transition that is important.”
 Generative Design, Chapter P.2.1.2
