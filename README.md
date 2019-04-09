@@ -4,7 +4,13 @@ This respository is a collection of exercises that explore the area creative pro
 
 ## Bearings
 
-[View Here](00_Outputs/bearings)
+Project can be viewed [here](00_Outputs/bearings)
+
+![alt text](00_Outputs/images/final.png "image")
+
+###TLDR
+
+This project revolved around the design of a graphic for a book on generative design. The project explores color, shape and grid based patterns.
 
 “Tension is highest when order borders on chaos. Individual forms abandon their strict arrangement in the dynamic grid and submit to random configurations. Elements inclined to the grid and those averse to it fight for visual supremacy. It is the moment of transition that is important.”
 Generative Design, Chapter P.2.1.2
@@ -15,7 +21,20 @@ This concept is explored in Generative design, in the “Movement in a Grid ” 
 
 In researching this area I discovered the work of Georg Nees. Nees was a German academic and pioneer in the area of computer art and generative graphics, who used lithographs to create his pieces based on computer algorithms he wrote. His piece “Schotter” or “Gravel” created in 1970, beautifully illustrates a transition from order to chaos. I found the way in which Nees used computer graphics to illustrate such an ancient concept using such a simple composition, very intriguing. I decided to use Nees’ work as a baseline for exploring this idea and seeing in what way I could further elaborate on the concept.
 
+Schotter by George Nees
 ![alt text](00_Outputs/images/schotter.png "image")
+
+### Iteration 7
+
+![alt text](00_Outputs/images/07.png "image")
+
+### Iteration 14
+
+![alt text](00_Outputs/images/14.png "image")
+
+### Iteration 5
+
+![alt text](00_Outputs/images/15.png "image")
 
 ## Typographic Links
 
