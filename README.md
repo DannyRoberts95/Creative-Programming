@@ -6,8 +6,6 @@ This respository is a collection of exercises that explore the area creative pro
 
 Project can be viewed [here](00_Outputs/01_Bearings/bearings)
 
-![alt text](00_Outputs/01_Bearings/bearings/images/final.png "image")
-
 ## Typographic Links
 
 [Typographic Links](00_Outputs/links)
