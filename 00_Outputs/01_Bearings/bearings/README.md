@@ -1,9 +1,5 @@
 # Bearings
 
-Project can be viewed [here](00_Outputs/01_Bearings/bearings)
-
-![alt text](00_Outputs/01_Bearings/bearings/images/final.png "image")
-
 ### TLDR
 
 This project revolved around the design of a graphic for a book on generative design. The project explores the use of color, shape and grid based patterns through creating a program.
