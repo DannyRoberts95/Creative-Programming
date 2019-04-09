@@ -14,6 +14,6 @@ These are the two works produced after the research in these areas.
 
 1. [Color](01_Colors/)
 2. [Shape](02_Shape/)
-3. [Type](03_Typography/)
+3. [Type](03_Type/)
 
 # Program Lists
