@@ -73,6 +73,8 @@ Typographic Links can be viewed [here](00_Outputs/02_Typographic_Links/links)
 
 Source code is available [here](https://github.com/DannyRoberts95/Creative-Programming/tree/master/00_Outputs/02_Typographic_Links/links)
 
+![alt text](00_Outputs/02_Typographic_Links/links/images/00.png "image")
+
 ### Project Basis
 
 This project revolved around the design of a custom program used to explore typography through creative programming. The project explores the form and structure of the type face and how one may achieve interesting results via breaking or distorting the type face.
