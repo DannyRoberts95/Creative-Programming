@@ -81,9 +81,9 @@ The letter forms are first rendered as a hidden Pgraphic object. By looping thro
 
 The particles spawned are animated using vector forces and constantly "seek" their spawn location. When the particles come into contact with the mouse they exhibit a "flee" behaviour to escape the mouse. The particles are not displayed individually but are displayed in relation to other particles by link lines. These link lines between particles give rigid form and structure to the system when still, and an organic fluid like structure when the system is disturbed.
 
-This project also explores the ability of p5.js to manipulate elements in the DOM by adding user input elements as away of interacting with the sketch. By adjusting the variables in the control window, the user can create a range of possible outputs from a dense, rigid structure to a dispersed and abstract. form.
+This project also explores the ability of p5.js to manipulate elements in the DOM by adding user input elements as away of interacting with the sketch. By adjusting the variables in the control window, the user can create a range of possible outputs from a dense, rigid structure to a dispersed and abstract form.
 
-#### Below is an example of a progressively distorted type face.
+#### Below is an example of a typeface progressively distorted using the program.
 
 ![alt text](00_Outputs/02_Typographic_Links/links/images/01.png "image")
 ![alt text](00_Outputs/02_Typographic_Links/links/images/02.png "image")
