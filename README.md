@@ -12,7 +12,7 @@ This respository is a collection of exercises that explore the area creative pro
 2. [Shape](02_Shape/)
 3. [Type](03_Type/)
 
-## Bearings
+# Bearings
 
 Bearings can be viewed [here](00_Outputs/01_Bearings/bearings)
 
@@ -67,7 +67,7 @@ In researching this area I discovered the work of Georg Nees. Nees was a German 
 
 ---
 
-## Typographic Links
+# Typographic Links
 
 Typographic Links can be viewed [here](00_Outputs/02_Typographic_Links/links)
 
