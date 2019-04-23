@@ -4,11 +4,11 @@ This respository is a collection of exercises that explore the area creative pro
 
 ## Bearings
 
-Project can be viewed [here](00_Outputs/01_Bearings/bearings)
+Bearings can be viewed [here](00_Outputs/01_Bearings/bearings)
 
 ## Typographic Links
 
-[Typographic Links](00_Outputs/02_Typographic_Links/links)
+Typographic Links can be viewed [here](00_Outputs/02_Typographic_Links/links)
 
 ## Chapters
 
