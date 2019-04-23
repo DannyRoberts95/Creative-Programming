@@ -1,10 +1,6 @@
 # Generative Design & Creative Coding
 
-This respository is a collection of exercises that explore the area creative programming. The exercises are organised into "Color", "Shape" and "Type" each section containing a list of exercises exploring its respective area. This exploration resulted in the creation of two projects, "Typographic Links" and "Bearings". Both of these projects can be viewed below.
-
-[Bearings](#Bearings)
-
-[Typographic Links](#Typographic-Links)
+This respository is a collection of exercises that explore the area creative programming. The exercises are organised into "Color", "Shape" and "Type" each section containing a list of exercises exploring its respective area. This exploration resulted in the creation of two projects, "Typographic Links" and "Bearings". Both of these projects can be viewed on the page below.
 
 ## Research Topics
 
