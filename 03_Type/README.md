@@ -1,6 +1,6 @@
 # Section 3 - Type
 
-This repository is a collection of P5 sketches exploring the area typography.
+This repository is a small collection of P5 sketches exploring the area typography. Each sketch can be viewed by clicking the link below the title.
 
 ---
 
