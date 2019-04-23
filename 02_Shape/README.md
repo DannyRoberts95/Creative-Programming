@@ -1,8 +1,15 @@
 # Section 2 - Shape
 
-This repository is a collection of P5 sketches exploring the area of shape and .
+This repository is a collection of P5 sketches exploring the areas of shape and pattern. Each sketch can be viewed by clicking the link below the title.
 
 This section will touch on:
+
+- polar co-ordinates
+- beginShape & endShape functions
+- vertices
+- grid systems & distortion of grid systems
+- rotation of a system elements
+- mouse interaction
 
 ---
 

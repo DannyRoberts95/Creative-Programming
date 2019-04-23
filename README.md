@@ -10,10 +10,8 @@ Bearings can be viewed [here](00_Outputs/01_Bearings/bearings)
 
 Typographic Links can be viewed [here](00_Outputs/02_Typographic_Links/links)
 
-## Chapters
+## Research Topics
 
 1. [Color](01_Colors/)
 2. [Shape](02_Shape/)
 3. [Type](03_Type/)
-
-# Program Lists
