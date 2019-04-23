@@ -17,7 +17,7 @@ Bearings can be viewed [here](00_Outputs/01_Bearings/bearings)
 
 ## Final Graphic
 
-![alt text](images/final.png "image")
+![alt text](00_Outputs/01_Bearings/bearings/images/final.png "image")
 
 ### TLDR
 
