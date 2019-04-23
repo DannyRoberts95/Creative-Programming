@@ -16,9 +16,9 @@ This project also explores the ability of p5.js to manipulate elements in the DO
 
 #### Below is an example of a progressively distorted type face.
 
-![alt text](00_Outputs/02_Typographic_Links/links/images/01.png "image")
-![alt text](00_Outputs/02_Typographic_Links/links/images/02.png "image")
-![alt text](00_Outputs/02_Typographic_Links/links/images/03.png "image")
-![alt text](00_Outputs/02_Typographic_Links/links/images/04.png "image")
-![alt text](00_Outputs/02_Typographic_Links/links/images/05.png "image")
-![alt text](00_Outputs/02_Typographic_Links/links/images/06.png "image")
+![alt text](images/01.png "image")
+![alt text](images/02.png "image")
+![alt text](images/03.png "image")
+![alt text](images/04.png "image")
+![alt text](images/05.png "image")
+![alt text](images/06.png "image")
