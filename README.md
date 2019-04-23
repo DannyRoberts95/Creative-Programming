@@ -15,8 +15,6 @@ This respository is a collection of exercises that explore the area creative pro
 
 Bearings can be viewed [here](00_Outputs/01_Bearings/bearings)
 
-## Final Graphic
-
 ![alt text](00_Outputs/01_Bearings/bearings/images/final.png "image")
 
 ### TLDR
@@ -34,9 +32,19 @@ This concept is explored in Generative design, in the “Movement in a Grid ” 
 
 In researching this area I discovered the work of Georg Nees. Nees was a German academic and pioneer in the area of computer art and generative graphics, who used lithographs to create his pieces based on computer algorithms he wrote. His piece “Schotter” or “Gravel” created in 1970, beautifully illustrates a transition from order to chaos. I found the way in which Nees used computer graphics to illustrate such an ancient concept using such a simple composition, very intriguing. I decided to use Nees’ work as a baseline for exploring this idea and seeing in what way I could further elaborate on the concept.
 
-Schotter by George Nees
+### Schotter by George Nees recreated in p5.js
 
 ![alt text](00_Outputs/01_Bearings/bearings/images/schotter.png "image")
+
+Below is a collection of some of the notable project iterations.
+
+### Iteration 1
+
+![alt text](00_Outputs/01_Bearings/bearings/images/01.png "image")
+
+### Iteration 6
+
+![alt text](00_Outputs/01_Bearings/bearings/images/06.png "image")
 
 ### Iteration 7
 
