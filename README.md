@@ -2,9 +2,9 @@
 
 This respository is a collection of exercises that explore the area creative programming. The exercises are organised into "Color", "Shape" and "Type" each section containing a list of exercises exploring its respective area. This exploration resulted in the creation of two projects, "Typographic Links" and "Bearings". Both of these projects can be viewed below.
 
-[Bearings](##Bearings)
+[Bearings](#Bearings)
 
-[Typographic Links](##Typographic-Links)
+[Typographic Links](#Typographic-Links)
 
 ## Research Topics
 
@@ -16,13 +16,13 @@ This respository is a collection of exercises that explore the area creative pro
 
 Bearings can be viewed [here](00_Outputs/01_Bearings/bearings)
 
+Source code is available [here](https://github.com/DannyRoberts95/Creative-Programming/tree/master/00_Outputs/01_Bearings/bearings)
+
 ![alt text](00_Outputs/01_Bearings/bearings/images/final.png "image")
 
-### TLDR
+### Project Basis
 
 This project revolved around the design of a graphic for a book cover on generative design. The project explores the use of color, shape and grid based patterns through creating a javaScript program to create these graphics.
-
-### Project Basis
 
 “Tension is highest when order borders on chaos. Individual forms abandon their strict arrangement in the dynamic grid and submit to random configurations. Elements inclined to the grid and those averse to it fight for visual supremacy. It is the moment of transition that is important.”
 Generative Design, Chapter P.2.1.2
@@ -37,7 +37,7 @@ In researching this area I discovered the work of Georg Nees. Nees was a German 
 
 ![alt text](00_Outputs/01_Bearings/bearings/images/schotter.png "image")
 
-Below is a collection of some of the notable project iterations.
+#### Below is a collection of some of the notable project iterations.
 
 ### Iteration 1
 
@@ -63,6 +63,31 @@ Below is a collection of some of the notable project iterations.
 
 ![alt text](00_Outputs/01_Bearings/bearings/images/16.png "image")
 
+---
+
+---
+
 ## Typographic Links
 
 Typographic Links can be viewed [here](00_Outputs/02_Typographic_Links/links)
+
+Source code is available [here](https://github.com/DannyRoberts95/Creative-Programming/tree/master/00_Outputs/02_Typographic_Links/links)
+
+### Project Basis
+
+This project revolved around the design of a custom program used to explore typography through creative programming. The project explores the form and structure of the type face and how one may achieve interesting results via breaking or distorting the type face.
+
+The letter forms are first rendered as a hidden Pgraphic object. By looping through the PGraphic pixel array and checking the color value of the pixels, particle objects can be spawned to represent the letter forms.
+
+The particles spawned are animated using vector forces and constantly "seek" their spawn location. When the particles come into contact with the mouse they exhibit a "flee" behaviour to escape the mouse. The particles are not displayed individually but are displayed in relation to other particles by link lines. These link lines between particles give rigid form and structure to the system when still, and an organic fluid like structure when the system is disturbed.
+
+This project also explores the ability of p5.js to manipulate elements in the DOM by adding user input elements as away of interacting with the sketch. By adjusting the variables in the control window, the user can create a range of possible outputs from a dense, rigid structure to a dispersed and abstract. form.
+
+#### Below is an example of a progressively distorted type face.
+
+![alt text](00_Outputs/02_Typographic_Links/links/images/01.png "image")
+![alt text](00_Outputs/02_Typographic_Links/links/images/02.png "image")
+![alt text](00_Outputs/02_Typographic_Links/links/images/03.png "image")
+![alt text](00_Outputs/02_Typographic_Links/links/images/04.png "image")
+![alt text](00_Outputs/02_Typographic_Links/links/images/05.png "image")
+![alt text](00_Outputs/02_Typographic_Links/links/images/06.png "image")
