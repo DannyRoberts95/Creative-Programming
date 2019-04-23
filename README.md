@@ -8,7 +8,7 @@ Project can be viewed [here](00_Outputs/01_Bearings/bearings)
 
 ## Typographic Links
 
-[Typographic Links](00_Outputs/links)
+[Typographic Links](00_Outputs/02_Typographic_Links/links)
 
 ## Chapters
 
